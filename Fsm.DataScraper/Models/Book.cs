@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Fsm.DataScraper.Models
 {
@@ -13,15 +14,18 @@ namespace Fsm.DataScraper.Models
         
         public string Name { get; set; }
 
+        [XmlIgnore]
         public CQ Dom { get; set; }
 
-        public int BookNumber { get; set; }
+        public int Number { get; set; }
 
-        public Dictionary<int, Dictionary<int, string>> Chapters { get; set; }
+        public List<Chapter> Chapters { get; set; }
+
+        public string Abbreviation { get; set; }
 
         public Book()
         {
-            Chapters = new Dictionary<int, Dictionary<int, string>>();
+            Chapters = new List<Chapter>();
         }
     }
 }

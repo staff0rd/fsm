@@ -1,0 +1,11 @@
+﻿<section>
+    <div class="book">
+        <h2 data-bind="html: displayName"></h2>
+        <div class="chapter" data-bind="foreach: chapters">
+            <h3 data-bind="html: number"></h3>
+            <div data-bind="foreach: verses">
+                <sub class="verse-number" data-bind="html: number"></sub><span class="verse" data-bind="html: text"></span>
+            </div>
+        </div>
+    </div>
+</section>

@@ -17,7 +17,15 @@ namespace Fsm.DataScraper
     {
         static void Main(string[] args)
         {
-            new DataScraperService().GetPages(@"\\linuxb0x\store\www.loose-canon.info");
+            var looseCanon = new LooseCanon
+            {
+                Url= @"\\linuxb0x\store\www.loose-canon.info",
+                Scraped = DateTime.Now
+            };
+
+            looseCanon.Books = new DataScraperService().GetPages(looseCanon.Url);
+            
+            XmlSerializerService.Serialize<LooseCanon>(looseCanon, @"d:\svn\fsm\canon.xml");
 
             Console.WriteLine("Finished");
             Console.ReadKey();
