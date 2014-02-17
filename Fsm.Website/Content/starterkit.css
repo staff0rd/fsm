@@ -57,12 +57,24 @@
     }
 }
 
-.book {
+.contents, .book {
     margin: 0 auto;
     width: 650px;
     text-align: justify;
-    line-height: 30px;
+    line-height: 40px;
+    font-family: Georgia,Cambria,"Times New Roman",Times,serif;
 }
+
+.contents ul {
+    margin: 0;
+}
+
+.verses, .contents li, .book {
+    font-size:18px;
+    line-height: 40px;
+    list-style: none;
+}
+
 .verse-number {
     padding-right:2px;
     -webkit-touch-callout: none;
