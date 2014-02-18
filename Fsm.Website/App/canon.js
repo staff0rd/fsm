@@ -1,8 +1,10 @@
 ﻿define(['plugins/http', 'durandal/app', 'knockout', 'models/book', 'models/chapter', 'models/verse'], function (http, app, ko, Book, Chapter, Verse) {
 
     var books = ko.observableArray();
+    var selectedBook = ko.observable();
 
     $.getJSON('/api/canon/get', function (data) {
+        var newBooks = [];
         $.each(data.Books, function (i, b) {
             var book = new Book(b.Number, b.Name, b.Abbreviation);
             $.each(b.Chapters, function (i, c) {
@@ -13,10 +15,12 @@
                 });
                 book.chapters.push(chapter);
             });
-            books.push(book);
+            newBooks.push(book);
         });
+        books(newBooks);
     });
     return {
         books: books,
+        selectedBook: selectedBook,
     };
 });
