@@ -1,26 +1,33 @@
-﻿define(['knockout', 'canon'], function (ko, canon) {
-    var displayName = ko.observable();
-    var chapters = ko.observableArray();
+﻿define(['knockout', 'canon', 'plugins/router'], function (ko, canon, router) {
+    var abbr = ko.observable();
+    var book = ko.observable();
+    var next = ko.observable();
+    var prev = ko.observable();
+
+    function update() {
+        var newBook = canon.getBookByAbbr(abbr());
+        book(newBook);
+        if (newBook) {
+            prev(canon.getBookByNumber(newBook.number - 1));
+            next(canon.getBookByNumber(newBook.number + 1));
+        }
+    }
+
+    canon.books.subscribe(function () {
+        update();
+    });
+
+    abbr.subscribe(function () {
+        update();
+    });
+
     return {
-        displayName: displayName,
-        chapters: chapters,
-        update: function (abbr) {
-            var that = this;
-            var newBook = ko.utils.arrayFilter(canon.books(), function (item) {
-                return item.abbreviation == abbr;
-            })[0];
-            if (newBook != null)
-            {
-                displayName(newBook.name)
-                that.chapters(newBook.chapters);
-            }
-        },
+        abbr: abbr,
+        next: next,
+        prev: prev,
+        book: book,
         activate: function (abbr) {
-            var that = this;
-            this.update(abbr);
-            canon.books.subscribe(function () {
-                that.update(abbr);
-            });
+            this.abbr(abbr);
         }
     };
 });

@@ -1,8 +1,21 @@
 ﻿<section>
+    <div class="book-nav">
+        <div class="book-prev" data-bind="with: prev()">
+            <a data-bind="attr: { href: hash, title: name }">
+                <i class="icon-step-backward"></i> Prev
+            </a>
+        </div>
+        <div class="book-next" data-bind="with: next()">
+            <a data-bind="attr: { href: hash, title: name }">
+                Next <i class="icon-step-forward"></i> 
+            </a>
+        </div>
+    </div>
     <div class="book">
-        <h2 data-bind="html: displayName"></h2>
-        <div class="chapter" data-bind="foreach: chapters()">
-            <h3 data-bind="html: number"></h3>
+        <h4>Book <span data-bind="html: book().number"></span></h4>
+        <h2 data-bind="html: book().name"></h2>
+        <div class="chapter" data-bind="foreach: book().chapters">
+            <h3>Chapter <span data-bind="html: number"></span></h3>
             <div>
                 <div class="verses" data-bind="foreach: verses">
                     <sub class="verse-number" data-bind="html: number"></sub><span class="verse" data-bind="html: text"></span>

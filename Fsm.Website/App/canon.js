@@ -1,7 +1,28 @@
 ﻿define(['plugins/http', 'durandal/app', 'knockout', 'models/book', 'models/chapter', 'models/verse'], function (http, app, ko, Book, Chapter, Verse) {
-
     var books = ko.observableArray();
-    var selectedBook = ko.observable();
+
+    var getBookByAbbr = function (abbr) {
+        var newBook = ko.utils.arrayFilter(books(), function (item) {
+            return item.abbreviation == abbr;
+        })[0];
+        return newBook;
+    }
+
+    var getBookByNumber = function (number) {
+        var newBook = ko.utils.arrayFilter(books(), function (item) {
+            return item.number == number;
+        })[0];
+        return newBook;
+    }
+
+    var getBook = function (path)
+    {
+        var intRegex = /^\d+$/;
+        if (intRegex.test(path))
+            return getBookByNumber(number);
+        else
+            return getBookByAbbr(path);
+    }
 
     $.getJSON('/api/canon/get', function (data) {
         var newBooks = [];
@@ -19,8 +40,11 @@
         });
         books(newBooks);
     });
+
     return {
         books: books,
-        selectedBook: selectedBook,
+        getBook: getBook,
+        getBookByAbbr: getBookByAbbr,
+        getBookByNumber: getBookByNumber
     };
 });
