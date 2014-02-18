@@ -46,16 +46,16 @@ namespace Fsm.DataScraper.Services
 
             foreach (var abbreviation in abbreviations)
             {
-                var book = pages.SingleOrDefault(p => p.Name == abbreviation.Item1);
+                var book = pages.SingleOrDefault(p => p != null && p.Name == abbreviation.Item1);
                 if (book == null)
                     Console.WriteLine("No match on {0}", abbreviation.Item1);
                 else
                     book.Abbreviation = abbreviation.Item2;
             }
 
-            foreach (var book in pages.Where(p => string.IsNullOrEmpty(p.Abbreviation)))
+            foreach (var book in pages.Where(p => p != null && string.IsNullOrEmpty(p.Abbreviation)))
             {
-                Console.WriteLine(book.Name);
+                //Console.WriteLine(book.Name);
             }
 
             Console.WriteLine("{0} pages", pages.Count);

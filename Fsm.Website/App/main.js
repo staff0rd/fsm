@@ -15,6 +15,8 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'],  function (s
     system.debug(true);
     //>>excludeEnd("build");
 
+
+    jQuery.ajaxSetup({ cache: false });
     app.title = 'The Loose Canon';
 
     app.configurePlugins({

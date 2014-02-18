@@ -25,7 +25,7 @@ namespace Fsm.DataScraper.Services
             {
                 var name = line.Substring(0, line.IndexOf("…"));
                 var abbreviation = line.Substring(line.LastIndexOf(",") > 0 ? line.LastIndexOf(",") : line.LastIndexOf("…") + 1).Trim('.').Trim(',').Trim().Replace("<br />", "").Replace("</p>", "").Replace(" ","").ToLower();
-                Console.WriteLine("{0}: {1}", abbreviation, name);
+                //Console.WriteLine("{0}: {1}", abbreviation, name);
                 yield return new Tuple<string, string>(name, abbreviation);
             }
         }
