@@ -3,11 +3,13 @@
         <div class="book-prev" data-bind="with: prev()">
             <a data-bind="attr: { href: hash, title: name }">
                 <i class="icon-step-backward"></i> Prev
+                <div data-bind="html: name"></div>
             </a>
         </div>
         <div class="book-next" data-bind="with: next()">
             <a data-bind="attr: { href: hash, title: name }">
                 Next <i class="icon-step-forward"></i> 
+                <div data-bind="html: name"></div>
             </a>
         </div>
     </div>
