@@ -62,8 +62,8 @@ namespace Fsm.DataScraper.Services
             new BookNameRemoveRule("as passed to Solipsy") { BookNumber = 16 },
 
             new ChapterHasTitleRule("<strong>P") { BookNumber = 19 },
-            new ParagraphReplaceRule("<br />", " ") { BookNumber = 19, ChapterNumber = 2 },
-            
+            new ParagraphReplaceRule("<br />", " ") { BookNumber = 19},
+            new VerseRemoveRule("<strong>  </strong>") { BookNumber = 19},
             new ParagraphReplaceRule("32. And I shall ponder", "33. And I shall ponder") { BookNumber = 19, ChapterNumber = 9 },
 
             new ChapterHasStrongTitleRule { BookNumber = 20 },
