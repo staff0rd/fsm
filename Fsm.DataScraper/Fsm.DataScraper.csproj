@@ -59,19 +59,19 @@
     <Compile Include="Services\DefaultScraper.cs" />
     <Compile Include="Services\IVerseCleanupRule.cs" />
     <Compile Include="Services\Scraper.cs" />
-    <Compile Include="Services\ScraperRules\BookNameFive.cs" />
-    <Compile Include="Services\ScraperRules\ChapterHasEmTitle.cs" />
-    <Compile Include="Services\ScraperRules\ChapterIsTildeTerminated.cs" />
-    <Compile Include="Services\ScraperRules\FirstChapterTwelve.cs" />
-    <Compile Include="Services\ScraperRules\IChapterRolloverRule.cs" />
-    <Compile Include="Services\ScraperRules\IFirstChapterRule.cs" />
-    <Compile Include="Services\ScraperRules\IBookNameRule.cs" />
+    <Compile Include="Services\ScraperRules\Book\BookNameFive.cs" />
+    <Compile Include="Services\ScraperRules\Book\IBookNameRule.cs" />
+    <Compile Include="Services\ScraperRules\Chapter\ChapterHasEmTitle.cs" />
+    <Compile Include="Services\ScraperRules\Chapter\ChapterIsTildeTerminated.cs" />
+    <Compile Include="Services\ScraperRules\Chapter\FirstChapterTwelve.cs" />
+    <Compile Include="Services\ScraperRules\Chapter\IChapterRolloverRule.cs" />
+    <Compile Include="Services\ScraperRules\Chapter\IFirstChapterRule.cs" />
     <Compile Include="Services\ScraperRules\IScraperRule.cs" />
-    <Compile Include="Services\ScraperRules\IVerseCleanupRule.cs" />
-    <Compile Include="Services\ScraperRules\IVerseOffsetRule.cs" />
-    <Compile Include="Services\ScraperRules\RemoveTildeRule.cs" />
     <Compile Include="Services\ScraperRules\ScraperRule.cs" />
-    <Compile Include="Services\ScraperRules\VerseOffsetBumpByFive.cs" />
+    <Compile Include="Services\ScraperRules\Verse\IVerseCleanupRule.cs" />
+    <Compile Include="Services\ScraperRules\Verse\IVerseOffsetRule.cs" />
+    <Compile Include="Services\ScraperRules\Verse\RemoveTildeRule.cs" />
+    <Compile Include="Services\ScraperRules\Verse\VerseOffsetBumpByFive.cs" />
     <Compile Include="Services\XmlSerializerService.cs" />
   </ItemGroup>
   <ItemGroup>
