@@ -94,7 +94,7 @@ namespace Fsm.DataScraper.Services
             new ChapterHasStrongTitle { BookNumber = 42 },
             
             new ChapterHasStrongTitle { BookNumber = 43 },
-            new BookAbbreviationRule("Hill") {BookNumber = 45 },
+            new BookAbbreviationRule("Hill") {BookNumber = 43 },
             
             new ChapterHasStrongTitle { BookNumber = 45 },
             new BookAbbreviationRule("CCC") {BookNumber = 45 },
