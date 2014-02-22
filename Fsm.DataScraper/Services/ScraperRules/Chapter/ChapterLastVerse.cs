@@ -7,18 +7,14 @@ using System.Threading.Tasks;
 
 namespace Fsm.DataScraper.Services.ScraperRules
 {
-    class ChapterIsTildeTerminated : ScraperRule, IChapterRolloverRule
+    public class ChapterLastVerse : ScraperRule, IChapterRolloverRule
     {
         public Chapter GetChapter(Book book, Chapter chapter, string paragraph, out bool skipParagraph)
         {
+            var newChapter = new Chapter { Number = chapter.Number + 1 };
+            book.Chapters.Add(newChapter);
             skipParagraph = false;
-            if (paragraph.Contains("~~~~~~~~~"))
-            {
-                var newChapter = new Chapter { Number = book.Chapters.Count + 1 };
-                book.Chapters.Add(newChapter);
-                return newChapter;
-            }
-            return chapter;
+            return newChapter;
         }
     }
 }

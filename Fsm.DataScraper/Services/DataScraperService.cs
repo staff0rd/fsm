@@ -31,22 +31,26 @@ namespace Fsm.DataScraper.Services
             Console.WriteLine("{0} pages", pages.Count);
 
             var errors = SetAbbreviations(pages, abbreviations).ToList();
-            if (!bookNumber.HasValue)
-                errors.ForEach(Console.WriteLine);
-                        
+
+            abbreviations.Where(p => !p.Matched).ToList().ForEach(p => Console.WriteLine(p.Name));
+
+            errors.ForEach(Console.WriteLine);
             
             return pages;
         }
 
-        private IEnumerable<string> SetAbbreviations(List<Book> pages, List<Abbreviation> abbreviations)
+        private IEnumerable<string> SetAbbreviations(List<Book> books, List<Abbreviation> abbreviations)
         {
-            foreach (var abbreviation in abbreviations)
+            foreach (var book in books.Where(p => p.Name != "Empty"))
             {
-                var book = pages.SingleOrDefault(p => p != null && p.Name == abbreviation.Name);
-                if (book == null)
-                    yield return string.Format("No match on {0}", abbreviation.Name);
+                var abbr = abbreviations.SingleOrDefault(p => p != null && p.Name == book.Name);
+                if (abbr == null)
+                    yield return string.Format("No match on {0}", book.Name);
                 else
-                    book.Abbreviation = abbreviation.Abbr;
+                {
+                    abbr.Matched = true;
+                    book.Abbreviation = abbr.Abbr;
+                }
             }
         }
 

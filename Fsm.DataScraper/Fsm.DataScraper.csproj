@@ -59,21 +59,31 @@
     <Compile Include="Services\DefaultScraper.cs" />
     <Compile Include="Services\EmptyScraper.cs" />
     <Compile Include="Services\Scraper.cs" />
-    <Compile Include="Services\ScraperRules\Book\BookNameFive.cs" />
-    <Compile Include="Services\ScraperRules\Book\IBookNameRule.cs" />
+    <Compile Include="Services\ScraperRules\Book\BookAbbreviationRule.cs" />
+    <Compile Include="Services\ScraperRules\Book\BookNameReplaceRule.cs" />
+    <Compile Include="Services\ScraperRules\Book\BookNameSetRule.cs" />
+    <Compile Include="Services\ScraperRules\Book\BookNameTerminateRule.cs" />
+    <Compile Include="Services\ScraperRules\Book\BookNameRemoveRule.cs" />
+    <Compile Include="Services\ScraperRules\Book\IBookRule.cs" />
     <Compile Include="Services\ScraperRules\Chapter\ChapterHasEmTitle.cs" />
+    <Compile Include="Services\ScraperRules\Chapter\ChapterHasStrongTitle.cs" />
     <Compile Include="Services\ScraperRules\Chapter\ChapterIsTildeTerminated.cs" />
+    <Compile Include="Services\ScraperRules\Chapter\ChapterLastVerse.cs" />
     <Compile Include="Services\ScraperRules\Chapter\FirstChapterTwelve.cs" />
     <Compile Include="Services\ScraperRules\Chapter\IChapterRolloverRule.cs" />
     <Compile Include="Services\ScraperRules\Chapter\IFirstChapterRule.cs" />
     <Compile Include="Services\ScraperRules\IScraperRule.cs" />
     <Compile Include="Services\ScraperRules\ScraperRule.cs" />
+    <Compile Include="Services\ScraperRules\Verse\IParagraphCleanupRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\IVerseCleanupRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\IVerseOffsetRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\RemoveTextRule.cs" />
+    <Compile Include="Services\ScraperRules\Verse\ReplaceParagraphRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\ReplaceTextRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\OffsetBumpByFive.cs" />
-    <Compile Include="Services\ScraperRules\Verse\TerminateRule.cs" />
+    <Compile Include="Services\ScraperRules\Verse\ReplaceVerseRule.cs" />
+    <Compile Include="Services\ScraperRules\TerminateRule.cs" />
+    <Compile Include="Services\ScraperRules\Verse\VerseTerminateRule.cs" />
     <Compile Include="Services\XmlSerializerService.cs" />
   </ItemGroup>
   <ItemGroup>

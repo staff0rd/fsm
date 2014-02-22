@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Fsm.DataScraper.Services.ScraperRules
 {
-    public interface IBookNameRule : IScraperRule
+    public interface IBookRule : IScraperRule
     {
-        void SetBookName(Book book);
+        void Update(Book book);
     }
 }

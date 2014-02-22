@@ -9,6 +9,6 @@ namespace Fsm.DataScraper.Services.ScraperRules
 {
     public interface IChapterRolloverRule : IScraperRule
     {
-        Chapter GetChapter(Book book, Chapter chapter, string paragraph);
+        Chapter GetChapter(Book book, Chapter chapter, string paragraph, out bool skipParagraph);
     }
 }

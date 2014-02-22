@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fsm.DataScraper.Services.ScraperRules
 {
-    public class TerminateRule : ScraperRule, IVerseCleanupRule
+    public class TerminateRule : ScraperRule
     {
         int _terminateAt;
         

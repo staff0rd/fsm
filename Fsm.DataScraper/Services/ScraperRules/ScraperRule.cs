@@ -8,15 +8,15 @@ namespace Fsm.DataScraper.Services.ScraperRules
 {
     public abstract class ScraperRule : IScraperRule
     {
-        public int BookNumber { get; set; }
+        public int? BookNumber { get; set; }
         
         public int? ChapterNumber { get; set; }
         
         public int? VerseNumber { get; set; }
 
-        public bool Required(int bookNumber, int? chapterNumber = null, int? verseNumber = null)
+        public bool Required(int? bookNumber = null, int? chapterNumber = null, int? verseNumber = null)
         {
-            return BookNumber == bookNumber && (!ChapterNumber.HasValue || ChapterNumber.Value == chapterNumber) && (!VerseNumber.HasValue || VerseNumber.Value == verseNumber);
+            return (!BookNumber.HasValue || BookNumber.Value == bookNumber ) && (!ChapterNumber.HasValue || ChapterNumber.Value == chapterNumber) && (!VerseNumber.HasValue || VerseNumber.Value == verseNumber);
         }
     }
 }

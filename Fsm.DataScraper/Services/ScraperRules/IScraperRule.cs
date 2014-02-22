@@ -8,6 +8,6 @@ namespace Fsm.DataScraper.Services.ScraperRules
 {
     public interface IScraperRule
     {
-        bool Required(int bookNumber, int? chapterNumber = null, int? verseNumber = null);
+        bool Required(int? bookNumber = null, int? chapterNumber = null, int? verseNumber = null);
     }
 }

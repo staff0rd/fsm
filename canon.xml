@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LooseCanon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Scraped>2014-02-22T23:14:15.2796724+11:00</Scraped>
+  <Scraped>2014-02-23T02:52:09.9515665+11:00</Scraped>
   <Url>\\linuxb0x\store\www.loose-canon.info</Url>
   <Books>
     <Book Number="0">
@@ -11,38 +11,9 @@
     </Book>
     <Book Number="1">
       <FileName>page4.htm</FileName>
-      <Name>Second Announcement Regarding Canonical Belief</Name>
-      <Chapters>
-        <Chapter Number="1">
-          <Verses>
-            <Verse Number="1">
-              <Text>“His Holiness the Flying Spaghetti Monster is Eternal, without beginning and without end, and with a whole tangled mess in the middle.</Text>
-            </Verse>
-            <Verse Number="2">
-              <Text>He willed All That There Is into existence when He saw fit to do so and in the order He chose.</Text>
-            </Verse>
-            <Verse Number="3">
-              <Text>He prankishly thwarts all human attempts to find out exactly when or how this might have occured.</Text>
-            </Verse>
-            <Verse Number="4">
-              <Text>He has chosen, in His Holy Sauced Wisdom, to reveal only these certain truths: that after the Earth itself, came mountains, trees and a midgit/midget (but not necessarily in that order), and that thereafter He took three days off, Friday being the Holiest among them.</Text>
-            </Verse>
-            <Verse Number="5">
-              <Text>What came next is the subject of much great lore passed from the midgit/midgets down through the ever-dwindling pirate population, also the Holy Inspired Works revealed to and gathered by His Faithful Followers, and attempts at scientific conjecture, each of which have varying levels of accuracy and entertainment value.</Text>
-            </Verse>
-            <Verse Number="6">
-              <Text>His Saucy Orbs do Look With Delight upon that which is well-written.</Text>
-            </Verse>
-            <Verse Number="7">
-              <Text>For as His Noodly Appendages Do Touch Us, so too do they touch even the smallest atoms of the universe, and re-arrange them for His Own Holy Amusement, so as to drive scientists insane.</Text>
-            </Verse>
-            <Verse Number="8">
-              <Text>And thus, if Creationism is to be taught as Science, then the Great and Holy Truth of the Creation of the Universe by His Holiness the Flying Spaghetti Monster must also be taught.” -Solipsy of the First Council of Olive Garden</Text>
-            </Verse>
-          </Verses>
-        </Chapter>
-      </Chapters>
-      <Abbreviation>2anc</Abbreviation>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>01</Abbreviation>
     </Book>
     <Book Number="2">
       <FileName>page5.htm</FileName>
@@ -226,9 +197,131 @@
     </Book>
     <Book Number="32">
       <FileName>page35.htm</FileName>
-      <Name>Empty</Name>
-      <Chapters />
-      <Abbreviation>32</Abbreviation>
+      <Name>The Open Letter of Bobby to the Kansas School Board</Name>
+      <Chapters>
+        <Chapter Number="1">
+          <Verses>
+            <Verse Number="1">
+              <Text>I am writing you with much concern after having read of your hearing to decide whether the alternative theory of Intelligent Design should be taught along with the theory of Evolution.</Text>
+            </Verse>
+            <Verse Number="2">
+              <Text>I think we can all agree that it is important for students to hear multiple viewpoints so they can choose for themselves the theory that makes the most sense to them.</Text>
+            </Verse>
+            <Verse Number="3">
+              <Text>I am concerned, however, that students will only hear one theory of Intelligent Design.</Text>
+            </Verse>
+            <Verse Number="4">
+              <Text>Let us remember that there are multiple theories of Intelligent Design.</Text>
+            </Verse>
+            <Verse Number="5">
+              <Text>I and many others around the world are of the strong belief that the universe was created by a Flying Spaghetti Monster.</Text>
+            </Verse>
+            <Verse Number="6">
+              <Text>It was He who created all that we see and all that we feel.</Text>
+            </Verse>
+            <Verse Number="7">
+              <Text>We feel strongly that the overwhelming scientific evidence pointing towards evolutionary processes is nothing but a coincidence, put in place by Him.</Text>
+            </Verse>
+            <Verse Number="8">
+              <Text>It is for this reason that I’m writing you today, to formally request that this alternative theory be taught in your schools, along with the other two theories.</Text>
+            </Verse>
+            <Verse Number="9">
+              <Text>In fact, I will go so far as to say, if you do not agree to do this, we will be forced to proceed with legal action.</Text>
+            </Verse>
+            <Verse Number="10">
+              <Text>I’m sure you see where we are coming from.</Text>
+            </Verse>
+            <Verse Number="11">
+              <Text>If the Intelligent Design theory is not based on faith, but instead another scientific theory, as is claimed, then you must also allow our theory to be taught, as it is also based on science, not on faith.</Text>
+            </Verse>
+            <Verse Number="12">
+              <Text>Some find that hard to believe, so it may be helpful to tell you a little more about our beliefs.</Text>
+            </Verse>
+            <Verse Number="13">
+              <Text>We have evidence that a Flying Spaghetti Monster created the universe.</Text>
+            </Verse>
+            <Verse Number="14">
+              <Text>None of us, of course, were around to see it, but we have written accounts of it.</Text>
+            </Verse>
+            <Verse Number="15">
+              <Text>We have several lengthy volumes explaining all details of His power.</Text>
+            </Verse>
+            <Verse Number="16">
+              <Text>Also, you may be surprised to hear that there are over 10 million of us, and growing.</Text>
+            </Verse>
+            <Verse Number="17">
+              <Text>We tend to be very secretive, as many people claim our beliefs are not substantiated by observable evidence.</Text>
+            </Verse>
+            <Verse Number="18">
+              <Text>What these people don’t understand is that He built the world to make us think the earth is older than it really is.</Text>
+            </Verse>
+            <Verse Number="19">
+              <Text>For example, a scientist may perform a carbon-dating process on an artifact.</Text>
+            </Verse>
+            <Verse Number="20">
+              <Text>He finds that approximately 75% of the Carbon-14 has decayed by electron emission to Nitrogen-14, and infers that this artifact is approximately 10,000 years old, as the half-life of Carbon-14 appears to be 5,730 years.</Text>
+            </Verse>
+            <Verse Number="21">
+              <Text>But what our scientist does not realize is that every time he makes a measurement, the Flying Spaghetti Monster is there changing the results with His Noodly Appendage.</Text>
+            </Verse>
+            <Verse Number="22">
+              <Text>We have numerous texts that describe in detail how this can be possible and the reasons why He does this.</Text>
+            </Verse>
+            <Verse Number="23">
+              <Text>He is of course invisible and can pass through normal matter with ease.</Text>
+            </Verse>
+            <Verse Number="24">
+              <Text>I’m sure you now realize how important it is that your students are taught this alternate theory.</Text>
+            </Verse>
+            <Verse Number="25">
+              <Text>It is absolutely imperative that they realize that observable evidence is at the discretion of a Flying Spaghetti Monster.</Text>
+            </Verse>
+            <Verse Number="26">
+              <Text>Furthermore, it is disrespectful to teach our beliefs without wearing His chosen outfit, which of course is full pirate regalia.</Text>
+            </Verse>
+            <Verse Number="27">
+              <Text>I cannot stress the importance of this enough, and unfortunately cannot describe in detail why this must be done as I fear this letter is already becoming too long.</Text>
+            </Verse>
+            <Verse Number="28">
+              <Text>The concise explanation is that He becomes angry if we don’t.</Text>
+            </Verse>
+            <Verse Number="29">
+              <Text>You may be interested to know that global warming, earthquakes, hurricanes, and other natural disasters are a direct effect of the shrinking numbers of Pirates since the 1800s.</Text>
+            </Verse>
+            <Verse Number="30">
+              <Text>For your interest, I have included a graph of the approximate number of pirates versus the average global temperature over the last 200 years.</Text>
+            </Verse>
+            <Verse Number="31">
+              <Text>As you can see, there is a statistically significant inverse relationship between pirates and global temperature. &lt;a href="http://www.venganza.org/images/PiratesVsTemp.png"&gt;&lt;img class="aligncenter" title="Scientific Graph" src="http://www.venganza.org/images/PiratesVsTemp.png" alt="Technical Looking Graph" width="600" height="400" /&gt;&lt;/a&gt;</Text>
+            </Verse>
+            <Verse Number="32">
+              <Text>In conclusion, thank you for taking the time to hear our views and beliefs.</Text>
+            </Verse>
+            <Verse Number="33">
+              <Text>I hope I was able to convey the importance of teaching this theory to your students.</Text>
+            </Verse>
+            <Verse Number="34">
+              <Text>We will of course be able to train the teachers in this alternate theory.</Text>
+            </Verse>
+            <Verse Number="35">
+              <Text>I am eagerly awaiting your response, and hope dearly that no legal action will need to be taken.</Text>
+            </Verse>
+            <Verse Number="36">
+              <Text>I think we can all look forward to the time when these three theories are given equal time in our science classrooms across the country, and eventually the world; One third time for Intelligent Design, one third time for Flying Spaghetti Monsterism, and one third time for logical conjecture based on overwhelming observable evidence.</Text>
+            </Verse>
+            <Verse Number="37">
+              <Text>Sincerely Yours,Bobby Henderson, concerned citizen.</Text>
+            </Verse>
+            <Verse Number="38">
+              <Text>P.S. I have included an artistic drawing of Him creating a mountain, trees, and a midget.</Text>
+            </Verse>
+            <Verse Number="39">
+              <Text>Remember, we are all His creatures. &lt;a href="http://www.venganza.org/fsmdrawing.jpg"&gt;&lt;img class="aligncenter" title="Artist Rendition" src="http://www.venganza.org/fsmdrawing.jpg" alt="Artist Rendition of Creation" width="600" height="429" /&gt;&lt;/a&gt;</Text>
+            </Verse>
+          </Verses>
+        </Chapter>
+      </Chapters>
+      <Abbreviation>bobby</Abbreviation>
     </Book>
     <Book Number="33">
       <FileName>page36.htm</FileName>

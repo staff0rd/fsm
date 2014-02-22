@@ -1,4 +1,5 @@
 ﻿using CsQuery;
+using Fsm.Common.Services.ConsoleApp;
 using Fsm.DataScraper.Models;
 using Fsm.DataScraper.Services.ScraperRules;
 using System;
@@ -17,25 +18,98 @@ namespace Fsm.DataScraper.Services
     {
         List<ScraperRule> _rules = new List<ScraperRule>
         {
-            new OffsetBumpByFive { BookNumber = 5, ChapterNumber = 12 },
-            new FirstChapterTwelve { BookNumber = 5 },
-            new ChapterIsTildeTerminated { BookNumber = 3 },
+            new RemoveTextRule("<br />"),
+
+            new TerminateRule(181)  {BookNumber = 1, ChapterNumber = 1, VerseNumber = 8 },
+
+            new TerminateRule(6) { BookNumber = 2, ChapterNumber = 1, VerseNumber = 23 },
+            new ReplaceTextRule(",",".") { BookNumber = 2, ChapterNumber = 1, VerseNumber = 23 },
+
+            new ChapterHasStrongTitle { BookNumber = 3 },
             new RemoveTextRule("~") { BookNumber = 3, ChapterNumber = 3, VerseNumber = 48 },
             new RemoveTextRule("~") { BookNumber = 3, ChapterNumber = 4, VerseNumber = 57 },
             new RemoveTextRule("Here endeth the second book.") { BookNumber =3, ChapterNumber = 2, VerseNumber = 46},
             new RemoveTextRule("Here Endeth the Third Book") { BookNumber =3, ChapterNumber = 3, VerseNumber = 48},
             new RemoveTextRule("Here endeth the Fourth Book") { BookNumber =3, ChapterNumber = 4, VerseNumber = 57},
-            new TerminateRule(6) { BookNumber = 2, ChapterNumber = 1, VerseNumber = 23 },
-            new ReplaceTextRule(",",".") { BookNumber = 2, ChapterNumber = 1, VerseNumber = 23 }
+            new ReplaceTextRule(" RAmen", ".  RAmen.") { BookNumber = 3, ChapterNumber = 5, VerseNumber= 44 },
+
+            new BookNameTerminateRule(35) { BookNumber = 5},
+            new OffsetBumpByFive { BookNumber = 5, ChapterNumber = 12 },
+            new FirstChapterTwelve { BookNumber = 5 },
+            new ChapterLastVerse { BookNumber = 5, ChapterNumber = 12, VerseNumber = 15 },
+
+            new ChapterHasEmTitle { BookNumber = 6 },
+
+            new ChapterHasStrongTitle { BookNumber = 7 },
+            
+            new ChapterHasStrongTitle { BookNumber = 8 },
+
+            new ChapterHasStrongTitle { BookNumber = 9 },
+            new ReplaceParagraphRule("32 The third", "43 The third") { BookNumber = 9, ChapterNumber = 2, VerseNumber = 23 },
+            new ReplaceParagraphRule("33 Last but", "44 Last but") { BookNumber = 9, ChapterNumber = 2, VerseNumber = 23 },
+
+            new ChapterHasStrongTitle { BookNumber = 11 },
+            new ChapterHasStrongTitle { BookNumber = 12 },
+
+            new BookNameReplaceRule("Numberof", "Number of") { BookNumber = 14 },
+            new BookNameRemoveRule(":") { BookNumber = 14 },
+
+            new ChapterHasStrongTitle { BookNumber = 15 },
+
+            new BookNameRemoveRule("as passed to Solipsy") { BookNumber = 16 },
+
+            new ChapterHasStrongTitle { BookNumber = 20 },
+            new ChapterHasStrongTitle { BookNumber = 21 },
+            new ChapterHasStrongTitle { BookNumber = 23 },
+            new ChapterHasStrongTitle { BookNumber = 24 },
+
+            new BookNameRemoveRule(".") { BookNumber = 25 },
+
+            new ChapterHasStrongTitle { BookNumber = 26 },
+            new ChapterHasStrongTitle { BookNumber = 28 },
+
+            new BookNameSetRule("Revelations of St. Jason") { BookNumber = 29 },
+
+            new ChapterHasStrongTitle { BookNumber = 30 },
+            
+            new ChapterHasStrongTitle { BookNumber = 31 },
+
+            new BookAbbreviationRule("Bobby") {BookNumber = 32 },
+            
+            new BookAbbreviationRule("Mu 1") {BookNumber = 34 },
+            new BookAbbreviationRule("Mu 2") {BookNumber = 35 },
+
+            new ChapterHasStrongTitle { BookNumber = 36 },
+
+            new BookNameReplaceRule("From", "from") { BookNumber = 37 },
+            
+            new BookNameReplaceRule("From", "from") { BookNumber = 38 },
+            
+            new BookNameReplaceRule("From", "from") { BookNumber = 39 },
+            
+            new BookNameReplaceRule("From", "from") { BookNumber = 40 },
+            
+            new BookNameReplaceRule("From", "from") { BookNumber = 41 },
+
+            new ChapterHasStrongTitle { BookNumber = 42 },
+            
+            new ChapterHasStrongTitle { BookNumber = 43 },
+            new BookAbbreviationRule("Hill") {BookNumber = 45 },
+            
+            new ChapterHasStrongTitle { BookNumber = 45 },
+            new BookAbbreviationRule("CCC") {BookNumber = 45 },
+
+            new BookNameRemoveRule(".") { BookNumber = 47 },
+            
+            new BookNameSetRule("Revelations 1: The Book of Revealed Crapola") { BookNumber = 48 },
+            
+            new BookNameRemoveRule(".") { BookNumber = 49 },
         };
 
         public DefaultScraper(string htmlPagePath, int pageNumber, bool _interactive) : base(htmlPagePath, pageNumber, _interactive) { }
 
         public override Book Scrape()
         {
-            if (_book.Number > 5)
-                return null;
-
             DetermineBookName();
 
             if (_book.Number > 0 && _book.Number < 50)
@@ -49,7 +123,7 @@ namespace Fsm.DataScraper.Services
 
         private void ExtractText(Book book)
         {
-            var paragraphs = book.Dom["div.entry > p"].Select(p => WebUtility.HtmlDecode(p.InnerText).Replace("\n", "")).Where(p => !string.IsNullOrWhiteSpace(p));
+            var paragraphs = book.Dom["div.entry > p"].Select(p => WebUtility.HtmlDecode(p.InnerHTML).Replace("\n", "")).Where(p => !string.IsNullOrWhiteSpace(p));
 
             var chapter = DetermineFirstChapter(book);
 
@@ -57,19 +131,40 @@ namespace Fsm.DataScraper.Services
 
             foreach (var paragraph in paragraphs)
             {
-                var matches = Regex.Matches(paragraph, @"\d+").OfType<Match>().Select(p => p.Index).ToArray();
+                bool skipParagraph;
+                chapter = DetectChapterRollover(book, chapter, paragraph, out skipParagraph);
+                if (skipParagraph)
+                    continue;
 
-                var verseOffset = DetermineVerseOffset(book, chapter);
+                var processed = PreProcessParagraph(book, chapter, paragraph);
 
-                var versesToAdd = GetVerses(paragraph, matches, verseOffset);
-                if (versesToAdd.Any())
-                    chapter.Verses.AddRange(versesToAdd);
-                else if (chapter.Verses.Any())
-                    chapter.Verses.Last().Text += " " + paragraph;
-                chapter = DetectChapterRollover(book, chapter, paragraph);
+                ProcessParagraph(book, chapter, processed);
             }
 
             ReviewChapters(book, paragraphs);
+        }
+
+        private string PreProcessParagraph(Book book, Chapter chapter, string paragraph)
+        {
+            var result = paragraph;
+
+            foreach(var rule in _rules.OfType<ReplaceParagraphRule>().Where(p => p.Required(book.Number, chapter.Number, chapter.Verses.Count)))
+                result = rule.Clean(result);
+
+            return result;
+        }
+
+        private void ProcessParagraph(Book book, Chapter chapter, string paragraph)
+        {
+            var matches = Regex.Matches(paragraph, @"\d+").OfType<Match>().Select(p => p.Index).ToArray();
+
+            var verseOffset = DetermineVerseOffset(book, chapter);
+
+            var versesToAdd = GetVerses(paragraph, matches, verseOffset);
+            if (versesToAdd.Any())
+                chapter.Verses.AddRange(versesToAdd);
+            else if (chapter.Verses.Any())
+                chapter.Verses.Last().Text += " " + paragraph;
         }
 
         private void ReviewChapters(Book book, IEnumerable<string> paragraphs)
@@ -89,9 +184,8 @@ namespace Fsm.DataScraper.Services
         {
             _book.Name = _book.Dom["h2"].Text().Trim();
 
-            var rule = _rules.OfType<IBookNameRule>().SingleOrDefault(p => p.Required(_book.Number));
-            if (rule != null)
-                rule.SetBookName(_book);
+            foreach (var rule in _rules.OfType<IBookRule>().Where(p => p.Required(_book.Number)))
+                rule.Update(_book);
         }
 
         private Chapter DetermineFirstChapter(Book book)
@@ -110,13 +204,13 @@ namespace Fsm.DataScraper.Services
             return chapter.Verses.Count;
         }
 
-        private Chapter DetectChapterRollover(Book book, Chapter chapter, string paragraph)
+        private Chapter DetectChapterRollover(Book book, Chapter chapter, string paragraph, out bool skipParagraph)
         {
             var newChapter = chapter;
-            var rule = _rules.OfType<IChapterRolloverRule>().SingleOrDefault(p => p.Required(book.Number, chapter.Number));
+            var rule = _rules.OfType<IChapterRolloverRule>().SingleOrDefault(p => p.Required(book.Number, chapter.Number, chapter.Verses.Any() ? chapter.Verses.Last().Number : (int?)null));
             if (rule != null)
-                newChapter = rule.GetChapter(book, chapter, paragraph);
-
+                return newChapter = rule.GetChapter(book, chapter, paragraph, out skipParagraph);
+            skipParagraph = false;
             return newChapter;
         }
 
@@ -136,6 +230,25 @@ namespace Fsm.DataScraper.Services
                 PrintVerses(chapter.Verses.Skip(chapter.Verses.Count - 3));
             else
                 PrintVerses(chapter.Verses);
+
+            WhatNext(chapter);
+        }
+
+        private void WhatNext(Chapter chapter)
+        {
+            var key = Prompt.GetKey("Show (E)nd, show (A)ll, or press any key to continue:");
+            switch (key)
+            {
+                case ConsoleKey.E: ShowEndOfChapter(chapter); break;
+                case ConsoleKey.A: ShowChapter(chapter); break;
+            }
+        }
+
+        private void ShowChapter(Chapter chapter)
+        {
+            Print(string.Format("Chapter {0:00} ", chapter.Number).PadRight(79, '*'));
+            PrintVerses(chapter.Verses);
+            WhatNext(chapter);
         }
 
         private void Print(string format, params object[] args)
@@ -148,8 +261,6 @@ namespace Fsm.DataScraper.Services
         {
             foreach (var verse in verses)
                 Print("{0:00}. {1}", verse.Number, verse.Text);
-            Console.ReadKey();
-            Console.WriteLine();
         }
         
         private List<Verse> GetVerses(string paragraph, int[] intMatches, int verseOffset)

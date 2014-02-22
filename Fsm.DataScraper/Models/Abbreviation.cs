@@ -11,5 +11,7 @@ namespace Fsm.DataScraper.Models
         public string Name { get; set; }
 
         public string Abbr { get; set; }
+
+        public bool Matched { get; set; }
     }
 }
