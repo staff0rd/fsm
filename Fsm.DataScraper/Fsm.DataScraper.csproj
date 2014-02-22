@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IndexException.cs" />
+    <Compile Include="Models\Abbreviation.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Chapter.cs" />
     <Compile Include="Models\DictionaryEntry.cs" />

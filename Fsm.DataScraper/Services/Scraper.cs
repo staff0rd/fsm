@@ -13,11 +13,11 @@ namespace Fsm.DataScraper.Services
     {
         protected readonly Book _book;
 
-        public Scraper(string htmlPagePath, int pageNumber)
+        public Scraper(string htmlPagePath, int bookNumber)
         {
             _book = new Book
             {
-                Number = pageNumber + 1,
+                Number = bookNumber + 1,
                 FileName = Path.GetFileName(htmlPagePath),
                 Dom = CQ.Create(File.ReadAllText(htmlPagePath))
             };

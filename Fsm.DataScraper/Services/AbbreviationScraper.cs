@@ -17,7 +17,7 @@ namespace Fsm.DataScraper.Services
             throw new NotImplementedException();
         }
         
-        public IEnumerable<Tuple<string,string>> GetAbbreviations()
+        public IEnumerable<Abbreviation> GetAbbreviations()
         {
             var data = WebUtility.HtmlDecode(_book.Dom["div.entry"].RenderSelection());
             var lines = data.Split('\n');
@@ -26,7 +26,7 @@ namespace Fsm.DataScraper.Services
                 var name = line.Substring(0, line.IndexOf("…"));
                 var abbreviation = line.Substring(line.LastIndexOf(",") > 0 ? line.LastIndexOf(",") : line.LastIndexOf("…") + 1).Trim('.').Trim(',').Trim().Replace("<br />", "").Replace("</p>", "").Replace(" ","").ToLower();
                 //Console.WriteLine("{0}: {1}", abbreviation, name);
-                yield return new Tuple<string, string>(name, abbreviation);
+                yield return new Abbreviation { Name = name, Abbr = abbreviation };
             }
         }
     }

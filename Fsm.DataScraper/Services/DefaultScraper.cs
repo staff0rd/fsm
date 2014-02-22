@@ -18,8 +18,8 @@ namespace Fsm.DataScraper.Services
         List<ScraperRule> _rules = new List<ScraperRule>
         {
             new VerseOffsetBumpByFive { BookNumber = 5, ChapterNumber = 12 },
-            new FirstChapterTwelve { BookNumber = 5 }
-            //new ChapterIsTildeTerminated { BookNumber = 3 }
+            new FirstChapterTwelve { BookNumber = 5 },
+            new ChapterIsTildeTerminated { BookNumber = 3 }
         };
 
         public DefaultScraper(string htmlPagePath, int pageNumber) : base(htmlPagePath, pageNumber) { }

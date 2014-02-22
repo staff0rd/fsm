@@ -23,9 +23,9 @@ namespace Fsm.DataScraper
                 Scraped = DateTime.Now
             };
 
-            looseCanon.Books = new DataScraperService().GetPages(looseCanon.Url);
-            
-            XmlSerializerService.Serialize<LooseCanon>(looseCanon, @"d:\svn\fsm\canon.xml");
+            looseCanon.Books = new DataScraperService().GetPages(looseCanon.Url, "page6.htm", 3);
+
+            XmlSerializerService.Serialize<LooseCanon>(looseCanon, @"D:\git\fsm\trunk\canon.xml");
 
             Console.WriteLine("Finished");
             Console.ReadKey();

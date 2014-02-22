@@ -17,6 +17,7 @@ namespace Fsm.DataScraper.Models
         [XmlIgnore]
         public CQ Dom { get; set; }
 
+        [XmlAttribute]
         public int Number { get; set; }
 
         public List<Chapter> Chapters { get; set; }

@@ -17,14 +17,41 @@ namespace Fsm.DataScraper.Services
         [DllImport("Shlwapi.dll", CharSet = CharSet.Unicode)]
         static extern int StrCmpLogicalW(string psz1, string psz2);
 
-        public List<Book> GetPages(string pageDirectory)
+        public List<Book> GetPages(string pageDirectory, string pageName = null, int? bookNumber = null)
         {
             var pages = new List<Book>();
 
             var htmlPages = Directory.GetFiles(pageDirectory).ToList();
             htmlPages.Sort((x, y) => StrCmpLogicalW(x, y));
 
-            List<Tuple<string, string>> abbreviations = null;
+            List<Abbreviation> abbreviations = ScrapeBooks(pages, htmlPages, pageName, bookNumber);
+
+            Console.WriteLine("this is happening");
+            var errors = SetAbbreviations(pages, abbreviations).ToList();
+            if (string.IsNullOrEmpty(pageName))
+                errors.ForEach(Console.WriteLine);
+                        
+            Console.WriteLine("{0} pages", pages.Count);
+            return pages;
+        }
+
+        private IEnumerable<string> SetAbbreviations(List<Book> pages, List<Abbreviation> abbreviations)
+        {
+            Console.WriteLine("this is happening");
+            foreach (var abbreviation in abbreviations)
+            {
+                var book = pages.SingleOrDefault(p => p != null && p.Name == abbreviation.Name);
+                if (book == null)
+                    yield return string.Format("No match on {0}", abbreviation.Name);
+                else
+                    book.Abbreviation = abbreviation.Abbr;
+            }
+        }
+
+        private static List<Abbreviation> ScrapeBooks(List<Book> pages, List<string> htmlPages, string pageName = null, int? bookNumber = null)
+        {
+            var specificPage = !string.IsNullOrEmpty(pageName) && bookNumber.HasValue;
+            List<Abbreviation> abbreviations = null;
 
             foreach (var htmlPage in htmlPages)
             {
@@ -37,29 +64,17 @@ namespace Fsm.DataScraper.Services
                         }
                     default:
                         {
-                            var page = new DefaultScraper(htmlPage, pages.Count - 1).Scrape();
-                            pages.Add(page);
+                            if ( !specificPage || Path.GetFileName(htmlPage) == pageName)
+                            {
+                                var page = new DefaultScraper(htmlPage, specificPage ? bookNumber.Value -1 : pages.Count - 1).Scrape();
+                                pages.Add(page);
+                            }
                             break;
                         }
                 }
             }
 
-            foreach (var abbreviation in abbreviations)
-            {
-                var book = pages.SingleOrDefault(p => p != null && p.Name == abbreviation.Item1);
-                if (book == null)
-                    Console.WriteLine("No match on {0}", abbreviation.Item1);
-                else
-                    book.Abbreviation = abbreviation.Item2;
-            }
-
-            foreach (var book in pages.Where(p => p != null && string.IsNullOrEmpty(p.Abbreviation)))
-            {
-                //Console.WriteLine(book.Name);
-            }
-
-            Console.WriteLine("{0} pages", pages.Count);
-            return pages;
+            return abbreviations;
         }
     }
 }
