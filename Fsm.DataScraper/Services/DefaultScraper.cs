@@ -17,11 +17,16 @@ namespace Fsm.DataScraper.Services
     {
         List<ScraperRule> _rules = new List<ScraperRule>
         {
-            new VerseOffsetBumpByFive { BookNumber = 5, ChapterNumber = 12 },
+            new OffsetBumpByFive { BookNumber = 5, ChapterNumber = 12 },
             new FirstChapterTwelve { BookNumber = 5 },
             new ChapterIsTildeTerminated { BookNumber = 3 },
-            new RemoveTildeRule { BookNumber = 3, ChapterNumber = 3, VerseNumber = 48 },
-            new RemoveTildeRule { BookNumber = 3, ChapterNumber = 4, VerseNumber = 57 }
+            new RemoveTextRule("~") { BookNumber = 3, ChapterNumber = 3, VerseNumber = 48 },
+            new RemoveTextRule("~") { BookNumber = 3, ChapterNumber = 4, VerseNumber = 57 },
+            new RemoveTextRule("Here endeth the second book.") { BookNumber =3, ChapterNumber = 2, VerseNumber = 46},
+            new RemoveTextRule("Here Endeth the Third Book") { BookNumber =3, ChapterNumber = 3, VerseNumber = 48},
+            new RemoveTextRule("Here endeth the Fourth Book") { BookNumber =3, ChapterNumber = 4, VerseNumber = 57},
+            new TerminateRule(6) { BookNumber = 2, ChapterNumber = 1, VerseNumber = 23 },
+            new ReplaceTextRule(",",".") { BookNumber = 2, ChapterNumber = 1, VerseNumber = 23 }
         };
 
         public DefaultScraper(string htmlPagePath, int pageNumber, bool _interactive) : base(htmlPagePath, pageNumber, _interactive) { }
@@ -47,7 +52,7 @@ namespace Fsm.DataScraper.Services
             var paragraphs = book.Dom["div.entry > p"].Select(p => WebUtility.HtmlDecode(p.InnerText).Replace("\n", "")).Where(p => !string.IsNullOrWhiteSpace(p));
 
             var chapter = DetermineFirstChapter(book);
-            
+
             book.Chapters = new List<Chapter> { chapter };
 
             foreach (var paragraph in paragraphs)
@@ -64,7 +69,20 @@ namespace Fsm.DataScraper.Services
                 chapter = DetectChapterRollover(book, chapter, paragraph);
             }
 
-            Console.WriteLine("Found {0} paragraphs", paragraphs.Count());
+            ReviewChapters(book, paragraphs);
+        }
+
+        private void ReviewChapters(Book book, IEnumerable<string> paragraphs)
+        {
+            foreach (var chapter in book.Chapters)
+            {
+                VerseCleanup(book.Number, chapter);
+
+                if (_interactive)
+                    ShowEndOfChapter(chapter);
+
+                Console.WriteLine("Found {0} paragraphs", paragraphs.Count());
+            }
         }
 
         private void DetermineBookName()
@@ -99,25 +117,14 @@ namespace Fsm.DataScraper.Services
             if (rule != null)
                 newChapter = rule.GetChapter(book, chapter, paragraph);
 
-
-
-            if (newChapter.Number != chapter.Number)
-            {
-                VerseCleanup(book.Number, chapter);
-                
-                if (_interactive)
-                    ShowEndOfChapter(chapter);
-            }
-
             return newChapter;
         }
 
         private void VerseCleanup(int bookNumber, Chapter chapter)
         {
-            for(int i = 0; i< chapter.Verses.Count;i++)
+            for (int i = 0; i < chapter.Verses.Count; i++)
             {
-                var rule = _rules.OfType<IVerseCleanupRule>().SingleOrDefault(p => p.Required(bookNumber, chapter.Number, chapter.Verses.ElementAt(i).Number));
-                if (rule != null)
+                foreach (var rule in _rules.OfType<IVerseCleanupRule>().Where(p => p.Required(bookNumber, chapter.Number, chapter.Verses.ElementAt(i).Number)))
                     chapter.Verses.ElementAt(i).Text = rule.Clean(chapter.Verses.ElementAt(i).Text);
             }
         }

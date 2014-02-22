@@ -23,7 +23,7 @@ namespace Fsm.DataScraper
                 Scraped = DateTime.Now
             };
 
-            looseCanon.Books = new DataScraperService().GetPages(looseCanon.Url, "page6.htm", 3);
+            looseCanon.Books = new DataScraperService().GetPages(looseCanon.Url);
 
             XmlSerializerService.Serialize<LooseCanon>(looseCanon, @"D:\git\fsm\trunk\canon.xml");
 

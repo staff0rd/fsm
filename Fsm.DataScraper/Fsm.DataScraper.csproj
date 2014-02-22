@@ -57,7 +57,7 @@
     <Compile Include="Services\AbbreviationScraper.cs" />
     <Compile Include="Services\DataScraperService.cs" />
     <Compile Include="Services\DefaultScraper.cs" />
-    <Compile Include="Services\IVerseCleanupRule.cs" />
+    <Compile Include="Services\EmptyScraper.cs" />
     <Compile Include="Services\Scraper.cs" />
     <Compile Include="Services\ScraperRules\Book\BookNameFive.cs" />
     <Compile Include="Services\ScraperRules\Book\IBookNameRule.cs" />
@@ -70,13 +70,21 @@
     <Compile Include="Services\ScraperRules\ScraperRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\IVerseCleanupRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\IVerseOffsetRule.cs" />
-    <Compile Include="Services\ScraperRules\Verse\RemoveTildeRule.cs" />
-    <Compile Include="Services\ScraperRules\Verse\VerseOffsetBumpByFive.cs" />
+    <Compile Include="Services\ScraperRules\Verse\RemoveTextRule.cs" />
+    <Compile Include="Services\ScraperRules\Verse\ReplaceTextRule.cs" />
+    <Compile Include="Services\ScraperRules\Verse\OffsetBumpByFive.cs" />
+    <Compile Include="Services\ScraperRules\Verse\TerminateRule.cs" />
     <Compile Include="Services\XmlSerializerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fsm.Common\Fsm.Common.csproj">
+      <Project>{7938255d-44da-4ac5-83c6-794e0dd71188}</Project>
+      <Name>Fsm.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

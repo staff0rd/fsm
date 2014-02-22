@@ -1,733 +1,354 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LooseCanon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Scraped>2014-02-22T21:29:31.5972664+11:00</Scraped>
+  <Scraped>2014-02-22T23:14:15.2796724+11:00</Scraped>
   <Url>\\linuxb0x\store\www.loose-canon.info</Url>
   <Books>
-    <Book Number="3">
-      <FileName>page6.htm</FileName>
-      <Name>The Book of Midgets/Midgits</Name>
+    <Book Number="0">
+      <FileName>page2.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>00</Abbreviation>
+    </Book>
+    <Book Number="1">
+      <FileName>page4.htm</FileName>
+      <Name>Second Announcement Regarding Canonical Belief</Name>
       <Chapters>
         <Chapter Number="1">
           <Verses>
             <Verse Number="1">
-              <Text>In the days when the Flying Spaghetti Monster combed the Bobby Mountain,</Text>
+              <Text>“His Holiness the Flying Spaghetti Monster is Eternal, without beginning and without end, and with a whole tangled mess in the middle.</Text>
             </Verse>
             <Verse Number="2">
-              <Text>He looked upon the Earth and saw that the land was devoid of chosen subjects.</Text>
+              <Text>He willed All That There Is into existence when He saw fit to do so and in the order He chose.</Text>
             </Verse>
             <Verse Number="3">
-              <Text>In His awesome Noodly Hugeness, the FSM cast his Noodly Appendage forth over the Bobby Mountain and said with a noodly growl,</Text>
+              <Text>He prankishly thwarts all human attempts to find out exactly when or how this might have occured.</Text>
             </Verse>
             <Verse Number="4">
-              <Text>″Send forth my beloved subjects!</Text>
+              <Text>He has chosen, in His Holy Sauced Wisdom, to reveal only these certain truths: that after the Earth itself, came mountains, trees and a midgit/midget (but not necessarily in that order), and that thereafter He took three days off, Friday being the Holiest among them.</Text>
             </Verse>
             <Verse Number="5">
-              <Text>Be they small and capable of head butting tall people in the groin.</Text>
+              <Text>What came next is the subject of much great lore passed from the midgit/midgets down through the ever-dwindling pirate population, also the Holy Inspired Works revealed to and gathered by His Faithful Followers, and attempts at scientific conjecture, each of which have varying levels of accuracy and entertainment value.</Text>
             </Verse>
             <Verse Number="6">
-              <Text>Let them be capable of acting as mobile beer holders.</Text>
+              <Text>His Saucy Orbs do Look With Delight upon that which is well-written.</Text>
             </Verse>
             <Verse Number="7">
-              <Text>Let them be cute and cuddly,</Text>
+              <Text>For as His Noodly Appendages Do Touch Us, so too do they touch even the smallest atoms of the universe, and re-arrange them for His Own Holy Amusement, so as to drive scientists insane.</Text>
             </Verse>
             <Verse Number="8">
-              <Text>and let them be capable of riding many a good winner at the races’. ”</Text>
-            </Verse>
-            <Verse Number="9">
-              <Text>And into the world the Midgets did come.</Text>
-            </Verse>
-            <Verse Number="10">
-              <Text>For they were indeed extremely cute and cuddly.</Text>
-            </Verse>
-            <Verse Number="11">
-              <Text>The bald midgets were sometimes confused by the FSM with sticks of roll on deodorant.</Text>
-            </Verse>
-            <Verse Number="12">
-              <Text>This amused the FSM greatly,</Text>
-            </Verse>
-            <Verse Number="13">
-              <Text>who named the bald midgets ‘The Rexona’ or ‘ The Rexonii’ (plural).</Text>
-            </Verse>
-            <Verse Number="14">
-              <Text>But extremely cute and cuddly they were.</Text>
-            </Verse>
-            <Verse Number="15">
-              <Text>In the early days the midgets grew much Basil and Herbs.</Text>
-            </Verse>
-            <Verse Number="16">
-              <Text>And in the absence of protein in the diet, they did not grow tall.</Text>
-            </Verse>
-            <Verse Number="17">
-              <Text>And the leader of their tribe was Egbert.</Text>
-            </Verse>
-            <Verse Number="18">
-              <Text>For he was so loved by the FSM for his baldness, that he was spared from further midget gags as an act of charity.</Text>
-            </Verse>
-            <Verse Number="19">
-              <Text>Then one day following the Basil harvest, Egbert and the tribe grew restless</Text>
-            </Verse>
-            <Verse Number="20">
-              <Text>and longed for the addition of minced beef in their pasta penne.</Text>
-            </Verse>
-            <Verse Number="21">
-              <Text>But Egbert knew additional protein may force him to grow tall, thereby forfeiting his venerable midgetness.</Text>
-            </Verse>
-            <Verse Number="22">
-              <Text>This would also forfeit his right to receive kid’s portion meals at McDonalds,</Text>
-            </Verse>
-            <Verse Number="23">
-              <Text>which was a real bummer.</Text>
-            </Verse>
-            <Verse Number="24">
-              <Text>And the FSM did appear unto Egbert and the midget tribe and spoke.</Text>
-            </Verse>
-            <Verse Number="25">
-              <Text>″Look guys, I’m really sorry for the really bad midget gags at your expense.</Text>
-            </Verse>
-            <Verse Number="26">
-              <Text>But it’s really boring being a supreme being sometimes.”</Text>
-            </Verse>
-            <Verse Number="27">
-              <Text>And the midgets did cheer sending forth high fives all round with their pudgy hands and fingers.</Text>
-            </Verse>
-            <Verse Number="28">
-              <Text>″As a sign of my good measure I will allow you to add ground beef,</Text>
-            </Verse>
-            <Verse Number="29">
-              <Text>provided you maintain a balanced diet and don’t grow tall.”</Text>
-            </Verse>
-            <Verse Number="30">
-              <Text>And the midgets did but whoop and holler in their tiny little voices</Text>
-            </Verse>
-            <Verse Number="31">
-              <Text>singing Randy Newman songs in his honour (you can guess which).</Text>
-            </Verse>
-            <Verse Number="32">
-              <Text>″Praised be unto His Noodly Appendages” they cried with their helium-filled voices.</Text>
-            </Verse>
-            <Verse Number="33">
-              <Text>And in a bid to overcome their protein deficiency,</Text>
-            </Verse>
-            <Verse Number="34">
-              <Text>the midgets set forth to slaughter everything that moved on the face of the earth.</Text>
-            </Verse>
-            <Verse Number="35">
-              <Text>For they did slaughter the armadillo, the antelope, the aardvaak and all other animals between the letters A-Z.</Text>
-            </Verse>
-            <Verse Number="36">
-              <Text>And Egbert did thus say: “Doode-a, keelling ell thuse-a creetoores soore-a beets zee hell oooot ooff grooeeng beseel und herbs.”</Text>
-            </Verse>
-            <Verse Number="37">
-              <Text>And there was great noodly happiness on the slopes of Bobby Mountain.</Text>
-            </Verse>
-            <Verse Number="38">
-              <Text>For theirs was the Kingdom of Protein!!</Text>
-            </Verse>
-          </Verses>
-        </Chapter>
-        <Chapter Number="2">
-          <Verses>
-            <Verse Number="1">
-              <Text>Following the great Midget reconciliation, the FSM did but enter a great period of self satisfaction.</Text>
-            </Verse>
-            <Verse Number="2">
-              <Text>For his subjects were omnivorous and yet retained their venerable Midgetness.</Text>
-            </Verse>
-            <Verse Number="3">
-              <Text>And in the great void feeling pretty damn pleased with himself, he put his many tentacles upon his great celestial recliner rocker and mellowed right out.</Text>
-            </Verse>
-            <Verse Number="4">
-              <Text>But following many years of relaxation, the Great Noodly One did become very bored.</Text>
-            </Verse>
-            <Verse Number="5">
-              <Text>Despite the presence of his beloved Midgets he was very much alone.</Text>
-            </Verse>
-            <Verse Number="6">
-              <Text>Being the only supreme being, there was little or no chance of him meeting an FSM babe for a bit of red hot action.</Text>
-            </Verse>
-            <Verse Number="7">
-              <Text>And absolutely no chance of him hoisting the if the Universe is rockin’, don’t come a knockin’ sign on his celestial door.</Text>
-            </Verse>
-            <Verse Number="8">
-              <Text>And in his solitude, the FSM did begin the Great Boredom Incantation,</Text>
-            </Verse>
-            <Verse Number="9">
-              <Text>that boomed across the sky and shook the little folk from their midget high chairs.</Text>
-            </Verse>
-            <Verse Number="10">
-              <Text>I’m bored</Text>
-            </Verse>
-            <Verse Number="11">
-              <Text>I’m really bored</Text>
-            </Verse>
-            <Verse Number="12">
-              <Text>I’m really really bored</Text>
-            </Verse>
-            <Verse Number="13">
-              <Text>I’m really really, really bored</Text>
-            </Verse>
-            <Verse Number="14">
-              <Text>(you’ll get the hang of it after about 100 reallys)</Text>
-            </Verse>
-            <Verse Number="15">
-              <Text>I’m so bored I find watching Bold and The Beautiful an absolute blast</Text>
-            </Verse>
-            <Verse Number="16">
-              <Text>I’m so bored I find watching Oprah the highlight of my day</Text>
-            </Verse>
-            <Verse Number="17">
-              <Text>I’m so bored I find Bill O’Reilly almost comical</Text>
-            </Verse>
-            <Verse Number="18">
-              <Text>I’m so bored I find ‘Alexander’ an absolute ripper of a film</Text>
-            </Verse>
-            <Verse Number="19">
-              <Text>Then following the citing of several more thousand bad moments in TV and cinema, the FSM did thus end The Great Boredom Incantation.</Text>
-            </Verse>
-            <Verse Number="20">
-              <Text>Sad for their Master, Egbert ordered the Midgets to try really damned hard to cheer FSM up.</Text>
-            </Verse>
-            <Verse Number="21">
-              <Text>They dressed up in cute little outfits – Ewoks, Munchkins and assorted furry animals.</Text>
-            </Verse>
-            <Verse Number="22">
-              <Text>They even sung cute little pantomine songs from Snow White, but the FSM was unmoved.</Text>
-            </Verse>
-            <Verse Number="23">
-              <Text>Egbert in his adoration for the FSM raised his pudgy little arms to the sky and screamed:</Text>
-            </Verse>
-            <Verse Number="24">
-              <Text>“Hey Greet Speghettee Doode-a. Vhy ere-a yuoo su sed? Bork Bork Bork!”</Text>
-            </Verse>
-            <Verse Number="25">
-              <Text>The FSM replied in perfect Ivy League Midgetese:</Text>
-            </Verse>
-            <Verse Number="26">
-              <Text>“Egbert, the midgets are my most blessed subjects.</Text>
-            </Verse>
-            <Verse Number="27">
-              <Text>You have brought me great piles of basil and herbs.</Text>
-            </Verse>
-            <Verse Number="28">
-              <Text>You have let me dish out many bad midget jokes at your expense.</Text>
-            </Verse>
-            <Verse Number="29">
-              <Text>For you have remained my most venerable subjects,</Text>
-            </Verse>
-            <Verse Number="30">
-              <Text>despite the culling many endangered species to eat with your penne pasta.”</Text>
-            </Verse>
-            <Verse Number="31">
-              <Text>And Egbert did reply:</Text>
-            </Verse>
-            <Verse Number="32">
-              <Text>“Nu prublems yuoor vursheep. Fur ve-a ere-a hunuoored thet yuoo ere-a oooor Greet Mester.”</Text>
-            </Verse>
-            <Verse Number="33">
-              <Text>And the FSM replied with very plummy Midget intonations:</Text>
-            </Verse>
-            <Verse Number="34">
-              <Text>“Midgets, while I get a huge belly laugh paying out on you with bad jokes,</Text>
-            </Verse>
-            <Verse Number="35">
-              <Text>there is room for more like you in the lands of Noodle Earth.</Text>
-            </Verse>
-            <Verse Number="36">
-              <Text>While you are great in many ways,</Text>
-            </Verse>
-            <Verse Number="37">
-              <Text>it should be pointed out that you are not perfect.</Text>
-            </Verse>
-            <Verse Number="38">
-              <Text>In fact many of you are bald.</Text>
-            </Verse>
-            <Verse Number="39">
-              <Text>In that regards I have decided to create a new race of littlies called the ‘Midgits’.</Text>
-            </Verse>
-            <Verse Number="40">
-              <Text>They will be improvements of great magnitude, similar the upgrade from Windows 98 to Windows 2000.</Text>
-            </Verse>
-            <Verse Number="41">
-              <Text>And yes they will all have hair.”</Text>
-            </Verse>
-            <Verse Number="42">
-              <Text>And the FSM closed his googly eye stalks,</Text>
-            </Verse>
-            <Verse Number="43">
-              <Text>and into the world did the Midgits pass.</Text>
-            </Verse>
-            <Verse Number="44">
-              <Text>And the Midgets were both happy but jealous.</Text>
-            </Verse>
-            <Verse Number="45">
-              <Text>This was mainly due to the improved hair lines of their cousins.</Text>
-            </Verse>
-            <Verse Number="46">
-              <Text>And much resentment was forthcoming from the little bald dudes.Here endeth the second book.</Text>
-            </Verse>
-          </Verses>
-        </Chapter>
-        <Chapter Number="3">
-          <Verses>
-            <Verse Number="1">
-              <Text>Following the FSM’s Great Boredom Incantation, the Midgits did pass into the lands of Noodle Earth.</Text>
-            </Verse>
-            <Verse Number="2">
-              <Text>For they also did dwell upon Bobby Mountain as but guest folk of Egbert and The Midget people.</Text>
-            </Verse>
-            <Verse Number="3">
-              <Text>For the Midgit hordes while declaring Bobby Mountain a most venerable place of both historic and spiritual importance</Text>
-            </Verse>
-            <Verse Number="4">
-              <Text>were really damn sick of paying rent.</Text>
-            </Verse>
-            <Verse Number="5">
-              <Text>It was time for them to dwell in their own lands, grind their own pasta, and develop their own range of exotic sauces.</Text>
-            </Verse>
-            <Verse Number="6">
-              <Text>The FSM like Bill Gates never fully revealed the flaws or traits engrained in his upgraded creations.</Text>
-            </Verse>
-            <Verse Number="7">
-              <Text>The Midgits unlike the Midgets were blessed with great mounds of hair on both head and chest.</Text>
-            </Verse>
-            <Verse Number="8">
-              <Text>For this was most advantageous for the he-midgits,</Text>
-            </Verse>
-            <Verse Number="9">
-              <Text>who found picking up she-midgets a breeze, provided gold chainage and open chested lurid shirts were worn.</Text>
-            </Verse>
-            <Verse Number="10">
-              <Text>The she-midgits were also given hairy chests,</Text>
-            </Verse>
-            <Verse Number="11">
-              <Text>which provided the FSM with a few more thousand gags, breaking him new ground on the Celestial stand-up comedy circuit.</Text>
-            </Verse>
-            <Verse Number="12">
-              <Text>The extra hair also gave the local Bobby Mountain depilatory and wig economies a real boost.</Text>
-            </Verse>
-            <Verse Number="13">
-              <Text>The Midgits were great refiners of the arts and cultural activities,</Text>
-            </Verse>
-            <Verse Number="14">
-              <Text>while the Midgets possessed greater farming and hunting skills.</Text>
-            </Verse>
-            <Verse Number="15">
-              <Text>While Midgets were the providers of many pasta ingredients,</Text>
-            </Verse>
-            <Verse Number="16">
-              <Text>the Midgits did refine and enhance the many pasta dishes of the day.</Text>
-            </Verse>
-            <Verse Number="17">
-              <Text>However, the Midgets did get most peed off with the Midgits.</Text>
-            </Verse>
-            <Verse Number="18">
-              <Text>For they spoke with much profanity and were culturally insensitive, speaking poor Midgetese.</Text>
-            </Verse>
-            <Verse Number="19">
-              <Text>For example The Midget Greeting “Hey-a leetle freend-a’” was thus sullied by the Midgits with “Hey-a dudester”.</Text>
-            </Verse>
-            <Verse Number="20">
-              <Text>And Egbert also complained to the FSM that the Midgits were favoured in the arts of being cute and cuddly, jockeying and advanced Italian cooking class.</Text>
-            </Verse>
-            <Verse Number="21">
-              <Text>The Midgits too had grown tired of their fellow Midgets,</Text>
-            </Verse>
-            <Verse Number="22">
-              <Text>whom they deemed simple unrefined folk,</Text>
-            </Verse>
-            <Verse Number="23">
-              <Text>content only with pleasing The Great Noodly One.</Text>
-            </Verse>
-            <Verse Number="24">
-              <Text>The FSM thought all of this was absolutely hilarious!</Text>
-            </Verse>
-            <Verse Number="25">
-              <Text>He was now perpetually amused by the cultural differences between the two little folk.</Text>
-            </Verse>
-            <Verse Number="26">
-              <Text>Why intervenes he thought.</Text>
-            </Verse>
-            <Verse Number="27">
-              <Text>″This is just too damn funny.</Text>
-            </Verse>
-            <Verse Number="28">
-              <Text>My long boredom has now ended.</Text>
-            </Verse>
-            <Verse Number="29">
-              <Text>They can just duke it out.”</Text>
-            </Verse>
-            <Verse Number="30">
-              <Text>And following the FSM’s non-interventionist policy, Egbert did thus issue a proclamation to the Midgits:</Text>
-            </Verse>
-            <Verse Number="31">
-              <Text>″Leestee here-a Meedgits ve-a vere-a here-a furst und qooeete-a frunkly ve-a ere-a pretty demned fed up veet yuoo beeeng here-a. Yuoo ere-a nut trooe-a representeshuns ooff zee Greet Nuudly Oone-a. Yuoo ere-a boot un upgrede-a veet mure-a heur und inhunced cooltoorel felooes. Gu feend yuoor oovn lunds. ”</Text>
-            </Verse>
-            <Verse Number="32">
-              <Text>Which roughly translates ‘Love your hair and cooking skills, but clear off we were here first.’</Text>
-            </Verse>
-            <Verse Number="33">
-              <Text>And in reply the Great Midgit wrestler and leader of his people Caxton did thus reply in a well rounded Midgit banter:</Text>
-            </Verse>
-            <Verse Number="34">
-              <Text>“Thunkyuoo su mooch fur zee cuukeeng ingredeeents, lufely yuoong ledeees und cuukeeng ingredeeents. Boot ve-a ere-a ooffff tu feend oooorslfes a noo ebude-a.”</Text>
-            </Verse>
-            <Verse Number="35">
-              <Text>Which roughly translates to ‘See ya round baldies!’</Text>
-            </Verse>
-            <Verse Number="36">
-              <Text>The FSM, saddened by the impending departure of Midgits from Bobby Mountain decided to accommodate them in an intelligently designed new land.</Text>
-            </Verse>
-            <Verse Number="37">
-              <Text>For while the Midgets were mountain dwelling folk,</Text>
-            </Verse>
-            <Verse Number="38">
-              <Text>the coastal lands were uninhabited,</Text>
-            </Verse>
-            <Verse Number="39">
-              <Text>and thoughts of marinara and other sea food pasta dishes did thus please him.</Text>
-            </Verse>
-            <Verse Number="40">
-              <Text>And thus the Midgits prepared to leave Bobby Mountain.</Text>
-            </Verse>
-            <Verse Number="41">
-              <Text>And they did prey to the Great Noodly One for safe deliverance to a new land.</Text>
-            </Verse>
-            <Verse Number="42">
-              <Text>And they did prey for a land much basil, herbs and parmesan to supplement their ever expanding supply of exotic sauces.</Text>
-            </Verse>
-            <Verse Number="43">
-              <Text>And with much trembling from his Great Noodly Appendages, the FSM did this transport the entire Midgit population to a great coastal plain.</Text>
-            </Verse>
-            <Verse Number="44">
-              <Text>And the Midgit Kingdom was named ‘Noodelium’ to honour his divine relocation</Text>
-            </Verse>
-            <Verse Number="45">
-              <Text>and cancellation of the Bobby Mountain tenancy agreement.</Text>
-            </Verse>
-            <Verse Number="46">
-              <Text>And Caxton was named their great leader.</Text>
-            </Verse>
-            <Verse Number="47">
-              <Text>And a feeling similar to when your ‘flat mate from hell’ moves out had erupted in both camps.</Text>
-            </Verse>
-            <Verse Number="48">
-              <Text>And there was great happiness for years to come in both Kingdoms. Here Endeth the Third Book</Text>
-            </Verse>
-          </Verses>
-        </Chapter>
-        <Chapter Number="4">
-          <Verses>
-            <Verse Number="1">
-              <Text>Following the creation of two kingdoms, there was a period of greatness ascribed to the Midgits of Noodelium.</Text>
-            </Verse>
-            <Verse Number="2">
-              <Text>For their access to beachside property and seafaring made the Midgits extremely profitable little dudes.</Text>
-            </Verse>
-            <Verse Number="3">
-              <Text>And thus they did build great ships</Text>
-            </Verse>
-            <Verse Number="4">
-              <Text>and set forth across the lands of Noodle Earth.</Text>
-            </Verse>
-            <Verse Number="5">
-              <Text>And their prize trade possession was Olive Oil and an ever expanding range of pasta sauces.</Text>
-            </Verse>
-            <Verse Number="6">
-              <Text>And they did surpass the Midgets of Bobby Mountain in greatness, who clung to their traditional agrarian ways,</Text>
-            </Verse>
-            <Verse Number="7">
-              <Text>seeking salvation through deeds pleasing the Great Noodly One.</Text>
-            </Verse>
-            <Verse Number="8">
-              <Text>And entrepreneurial Midgit leader Caxton did thus become rich and powerful.</Text>
-            </Verse>
-            <Verse Number="9">
-              <Text>His images were splashed across many tabloid glossy magazines and entertainment gossip programs (‘Midgitainement Tonight’.</Text>
-            </Verse>
-            <Verse Number="10">
-              <Text>And the Noodleium tabloids did thus gossip wickedly about Caxton’s love life,</Text>
-            </Verse>
-            <Verse Number="11">
-              <Text>after hours activity</Text>
-            </Verse>
-            <Verse Number="12">
-              <Text>and cameo sitcom appearances.</Text>
-            </Verse>
-            <Verse Number="13">
-              <Text>Caxton did thus employ many Flimsy Moral Standards</Text>
-            </Verse>
-            <Verse Number="14">
-              <Text>for he was a seething mass of testosterone.</Text>
-            </Verse>
-            <Verse Number="15">
-              <Text>And this did greatly impress the FSM who would bellow from the cosmos</Text>
-            </Verse>
-            <Verse Number="16">
-              <Text>″Way to go little buddy”</Text>
-            </Verse>
-            <Verse Number="17">
-              <Text>following Caxton’s successful nights out.</Text>
-            </Verse>
-            <Verse Number="18">
-              <Text>For Caxton so loved the lime-light and conquests of both social and other varieties.</Text>
-            </Verse>
-            <Verse Number="19">
-              <Text>During a red carpet special interview with bubbly blond entertainment reporter,</Text>
-            </Verse>
-            <Verse Number="20">
-              <Text>Caxton did thus issue a conquest proclamation of a different kind,</Text>
-            </Verse>
-            <Verse Number="21">
-              <Text>shocking Egbert and the Midgets of Bobby Mountain.</Text>
-            </Verse>
-            <Verse Number="22">
-              <Text>“Meedgets ooff Bubby Muoonteeen. Zee huly lunds cunteenooe-a tu wane-a under yuoor cuntrul. Geefe-a zeem tu me-a, und I veell cere-a fur but yuoo und Bubby Muoonteeen. Bork Bork Bork!”</Text>
-            </Verse>
-            <Verse Number="23">
-              <Text>Which roughly translates to: “Give me your land baldies, or else. Bork Bork Bork!”</Text>
-            </Verse>
-            <Verse Number="24">
-              <Text>Caxton did thus wish Bobby Mountain to become a part of the Kingdom of Noodelium.</Text>
-            </Verse>
-            <Verse Number="25">
-              <Text>And he announced no more cameo TV appearances,</Text>
-            </Verse>
-            <Verse Number="26">
-              <Text>for he was off to war.</Text>
-            </Verse>
-            <Verse Number="27">
-              <Text>I “veell be-a pustpuneeng my cemeu oon ‘Eferyune-a Lufes Raymond’ tu cunqooer zee Huly Lund.”</Text>
-            </Verse>
-            <Verse Number="28">
-              <Text>At first the FSM thought all this was hilarious,</Text>
-            </Verse>
-            <Verse Number="29">
-              <Text>and was very excited about seeing his beloved subjects going ‘toe to toe’.</Text>
-            </Verse>
-            <Verse Number="30">
-              <Text>However, the FSM did not approve of holy killing as a means of reaching the beer volcano and stripper factory.</Text>
-            </Verse>
-            <Verse Number="31">
-              <Text>He therefore boomed forth a proclamation to all the little folk:</Text>
-            </Verse>
-            <Verse Number="32">
-              <Text>“Loyal subjects. The concept of holy war and wasting peoples lives in my name is a major bummer.</Text>
-            </Verse>
-            <Verse Number="33">
-              <Text>I will not allow it.</Text>
-            </Verse>
-            <Verse Number="34">
-              <Text>You must therefore resolve your differences by my way of choosing.</Text>
-            </Verse>
-            <Verse Number="35">
-              <Text>I therefore decree that you shall resolve the issue in a series of televised taunting and verbal slanging matches.”</Text>
-            </Verse>
-            <Verse Number="36">
-              <Text>And thus a series of debates, with much haranguing and name calling was held.</Text>
-            </Verse>
-            <Verse Number="37">
-              <Text>And the results were decided by phone-in poll, to be announced painfully slowly, following many commercial breaks, by The Great Noodly One.</Text>
-            </Verse>
-            <Verse Number="38">
-              <Text>Well prepared for the bald jokes, the Midgets did thus mercilessly hammer the Midgits,</Text>
-            </Verse>
-            <Verse Number="39">
-              <Text>scoring many fine hits on the fascile Caxton and his dandies.</Text>
-            </Verse>
-            <Verse Number="40">
-              <Text>Things got really ugly when Egbert produced Caxton rumours and gossip even the tabloids had overlooked.</Text>
-            </Verse>
-            <Verse Number="41">
-              <Text>And the FSM did thus snicker and chuckle at the sharp-witted gags of the Midgets, for it was extremely entertaining to him.</Text>
-            </Verse>
-            <Verse Number="42">
-              <Text>The phone poll did thus proclaim, following many commercial breaks, The Midgets unanimous winners.</Text>
-            </Verse>
-            <Verse Number="43">
-              <Text>Then, following the verdict, The FSM did thus issue the following order:</Text>
-            </Verse>
-            <Verse Number="44">
-              <Text>″Look guys. My intention was for you to live harmoniously,</Text>
-            </Verse>
-            <Verse Number="45">
-              <Text>but for the odd cruel put down to keep me amused.</Text>
-            </Verse>
-            <Verse Number="46">
-              <Text>I have erred by my lack of intervention, be it partly my fault,</Text>
-            </Verse>
-            <Verse Number="47">
-              <Text>for I was bored desiring entertainment.</Text>
-            </Verse>
-            <Verse Number="48">
-              <Text>In all our folly, I have decided I will create a third race of people,</Text>
-            </Verse>
-            <Verse Number="49">
-              <Text>to keep you both in check.</Text>
-            </Verse>
-            <Verse Number="50">
-              <Text>And they shall be large and capable of telling many politically incorrect jokes about thee.</Text>
-            </Verse>
-            <Verse Number="51">
-              <Text>There shall be no more talk of conquering the Holy Mountain.</Text>
-            </Verse>
-            <Verse Number="52">
-              <Text>For it is a place sacred to all Pastafarians.”</Text>
-            </Verse>
-            <Verse Number="53">
-              <Text>And thus with a shudder of his noodles and rolling of his googly eyes the FSM sent forth the Big People into the world.</Text>
-            </Verse>
-            <Verse Number="54">
-              <Text>And their first words in praise of their noodly master were:</Text>
-            </Verse>
-            <Verse Number="55">
-              <Text>″Shiver me timbers. O’im off ta’ collect some pieces of eight.”</Text>
-            </Verse>
-            <Verse Number="56">
-              <Text>And they were given the gift of politically incorrect putdown.</Text>
-            </Verse>
-            <Verse Number="57">
-              <Text>And their maritime, rum-drinking, and bird-handling skills were unsurpassed. Here endeth the Fourth Book</Text>
-            </Verse>
-          </Verses>
-        </Chapter>
-        <Chapter Number="5">
-          <Verses>
-            <Verse Number="1">
-              <Text>For thus it came to pass The Great Noodly One did much letting the air out the proverbial Midget/Midgit tyres by inventing a third race of people.</Text>
-            </Verse>
-            <Verse Number="2">
-              <Text>For the Midgets and Midgits were yea verily ‘full-of-it’ ego wise,</Text>
-            </Verse>
-            <Verse Number="3">
-              <Text>following much favouritism from his holiness.</Text>
-            </Verse>
-            <Verse Number="4">
-              <Text>For they were like Tinkerbell, Paris Hilton’s small dog: the Chihuahua that had everything.</Text>
-            </Verse>
-            <Verse Number="5">
-              <Text>And he did thus give the Big People many gifts,</Text>
-            </Verse>
-            <Verse Number="6">
-              <Text>espoused in the ways of Pirates and Lumberjacks.</Text>
-            </Verse>
-            <Verse Number="7">
-              <Text>And the FSM, sick of telling little people gags, did gift the Big Ones with many politically incorrect ways.</Text>
-            </Verse>
-            <Verse Number="8">
-              <Text>For the likeable roguish spirit of the FSM, the creator of the Beer Volcano and Strippers, was thus embodied in these likeable rogues.</Text>
-            </Verse>
-            <Verse Number="9">
-              <Text>The Big people did thus inhabit near the Midgit and Midget realms of Noodelium and Bobby Mountain.</Text>
-            </Verse>
-            <Verse Number="10">
-              <Text>The Big People bordering Noodelium in particular did adopt many ways of the Pirate.</Text>
-            </Verse>
-            <Verse Number="11">
-              <Text>And their attempts to master the language of the Midgits were an utter failure.</Text>
-            </Verse>
-            <Verse Number="12">
-              <Text>For they felt the use of the phrase “Bork, Bork, Bork” was an utter bummer.</Text>
-            </Verse>
-            <Verse Number="13">
-              <Text>And they did thus develop the use of Piratese as their official language.</Text>
-            </Verse>
-            <Verse Number="14">
-              <Text>And the Midgits used their galleons as vessels of transport their tremendously large range of pasta sauces and ingredients across Noodle Earth.</Text>
-            </Verse>
-            <Verse Number="15">
-              <Text>And other prophets of the Great Noodly One will recount their tales.</Text>
-            </Verse>
-            <Verse Number="16">
-              <Text>Whilst on Bobby Mountain, the Big People did thus use their roguish spirit to cut the sacred trees of Bobby Mountain.</Text>
-            </Verse>
-            <Verse Number="17">
-              <Text>And despite the Midgets clear opposition to such a practice,</Text>
-            </Verse>
-            <Verse Number="18">
-              <Text>the FSM found the logrolling contests a welcome relief from the dwarf wrestling contests.</Text>
-            </Verse>
-            <Verse Number="19">
-              <Text>And thus the Lumberjacks practices were tolerated by The Great One,</Text>
-            </Verse>
-            <Verse Number="20">
-              <Text>but only with a sustainable land management plan.</Text>
-            </Verse>
-            <Verse Number="21">
-              <Text>And the Big People did thus attempt to emulate the FSM’s Midget jokes on many occasions.</Text>
-            </Verse>
-            <Verse Number="22">
-              <Text>But the Midget/Midgits had endured many gags by the FSM over the last few thousand years.</Text>
-            </Verse>
-            <Verse Number="23">
-              <Text>And the Big People’s attempted gags were like water off a ducks back.</Text>
-            </Verse>
-            <Verse Number="24">
-              <Text>For the Midget/Midgits did thus turn the tables,</Text>
-            </Verse>
-            <Verse Number="25">
-              <Text>making Big People the butt some many wicked one-liners.</Text>
-            </Verse>
-            <Verse Number="26">
-              <Text>And the Lumberjack and Pirate jokes came thick and fast.</Text>
-            </Verse>
-            <Verse Number="27">
-              <Text>And following many televised slanging and haranguing matches on MTV (that’s Midgit TV!) the combined Midgit/Midget crack debating team did thus hammer the Big People.</Text>
-            </Verse>
-            <Verse Number="28">
-              <Text>And it was thereby decreed by the victorious Midget leader Egbert, that no further jokes of a politically incorrect nature shall be uttered in the lands of Noodle Earth.</Text>
-            </Verse>
-            <Verse Number="29">
-              <Text>“Felloo Meedgets, Meedgits, Loomberjecks und Puretes. Ve-a zee feecturs hereby decree-a thet zee veecked jeebes und bed gegs ebuoot iech oozeer shell ceese-a. Fur ve-a shell leern tu leefe-a in peece-a. Ve-a shell leern muny Iteleeun Cuukeeng skeells und receepes, und ve-a shell feend elternete-a meuns ooff pleeseeng oooor Greet Nuudly Mester.”</Text>
-            </Verse>
-            <Verse Number="30">
-              <Text>Which roughly translate to; “Less jibes, more cooking and lots of prayers to the Great Noodly One”.</Text>
-            </Verse>
-            <Verse Number="31">
-              <Text>And the FSM thought that this was a major bummer, for all that Theo-speak was sappy and boring.</Text>
-            </Verse>
-            <Verse Number="32">
-              <Text>And he did bellow across the cosmos:</Text>
-            </Verse>
-            <Verse Number="33">
-              <Text>“No more use of 17th Century English prose when addressing me please. Just speak to me normally for crying out loud.”</Text>
-            </Verse>
-            <Verse Number="34">
-              <Text>And the pirates, tired of all the wowsers, did thus depart the lands of Noodle Earth to seek adventure and treasure.</Text>
-            </Verse>
-            <Verse Number="35">
-              <Text>And the Lumberjacks soon ran out of timber, tossed in their axes, and joined the Pirates on their tall ships.</Text>
-            </Verse>
-            <Verse Number="36">
-              <Text>And the First Great Age of Noodle Earth did thus conclude with the departure of the Big People.</Text>
-            </Verse>
-            <Verse Number="37">
-              <Text>And the Flying Spaghetti Monster did thus yawn at the Midgets and Midgits.</Text>
-            </Verse>
-            <Verse Number="38">
-              <Text>For like a man-of-the-house with 50 cable channels to view, he did thus flip the many channels of his creations and bellow.</Text>
-            </Verse>
-            <Verse Number="39">
-              <Text>“Time to checkout this new stuff on the Pirate Channel, cause these guys have fun.”</Text>
-            </Verse>
-            <Verse Number="40">
-              <Text>And here endeth the Fifth Book and The First Age of Noodle Earth.</Text>
-            </Verse>
-            <Verse Number="41">
-              <Text>For keeping in the traditions of other religious texts, no dates or precise scientific evidence shall be mentioned.</Text>
-            </Verse>
-            <Verse Number="42">
-              <Text>It is The Great One’s wish that vague wording and historical accounts should provide much arguing and disagreement amongst us.</Text>
-            </Verse>
-            <Verse Number="43">
-              <Text>Nevertheless, it is the irrefutable word of The Flying Spaghetti Monster and therefore must be true.</Text>
-            </Verse>
-            <Verse Number="44">
-              <Text>Praised be to His Noodly Appendages!! (PBTHNA) RAmen</Text>
+              <Text>And thus, if Creationism is to be taught as Science, then the Great and Holy Truth of the Creation of the Universe by His Holiness the Flying Spaghetti Monster must also be taught.” -Solipsy of the First Council of Olive Garden</Text>
             </Verse>
           </Verses>
         </Chapter>
       </Chapters>
-      <Abbreviation>mid</Abbreviation>
+      <Abbreviation>2anc</Abbreviation>
+    </Book>
+    <Book Number="2">
+      <FileName>page5.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>02</Abbreviation>
+    </Book>
+    <Book Number="3">
+      <FileName>page6.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>03</Abbreviation>
+    </Book>
+    <Book Number="4">
+      <FileName>page7.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>04</Abbreviation>
+    </Book>
+    <Book Number="5">
+      <FileName>page8.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>05</Abbreviation>
+    </Book>
+    <Book Number="6">
+      <FileName>page9.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>06</Abbreviation>
+    </Book>
+    <Book Number="7">
+      <FileName>page10.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>07</Abbreviation>
+    </Book>
+    <Book Number="8">
+      <FileName>page11.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>08</Abbreviation>
+    </Book>
+    <Book Number="9">
+      <FileName>page12.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>09</Abbreviation>
+    </Book>
+    <Book Number="10">
+      <FileName>page13.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>10</Abbreviation>
+    </Book>
+    <Book Number="11">
+      <FileName>page14.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>11</Abbreviation>
+    </Book>
+    <Book Number="12">
+      <FileName>page15.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>12</Abbreviation>
+    </Book>
+    <Book Number="13">
+      <FileName>page16.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>13</Abbreviation>
+    </Book>
+    <Book Number="14">
+      <FileName>page17.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>14</Abbreviation>
+    </Book>
+    <Book Number="15">
+      <FileName>page18.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>15</Abbreviation>
+    </Book>
+    <Book Number="16">
+      <FileName>page19.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>16</Abbreviation>
+    </Book>
+    <Book Number="17">
+      <FileName>page20.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>17</Abbreviation>
+    </Book>
+    <Book Number="18">
+      <FileName>page21.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>18</Abbreviation>
+    </Book>
+    <Book Number="19">
+      <FileName>page22.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>19</Abbreviation>
+    </Book>
+    <Book Number="20">
+      <FileName>page23.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>20</Abbreviation>
+    </Book>
+    <Book Number="21">
+      <FileName>page24.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>21</Abbreviation>
+    </Book>
+    <Book Number="22">
+      <FileName>page25.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>22</Abbreviation>
+    </Book>
+    <Book Number="23">
+      <FileName>page26.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>23</Abbreviation>
+    </Book>
+    <Book Number="24">
+      <FileName>page27.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>24</Abbreviation>
+    </Book>
+    <Book Number="25">
+      <FileName>page28.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>25</Abbreviation>
+    </Book>
+    <Book Number="26">
+      <FileName>page29.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>26</Abbreviation>
+    </Book>
+    <Book Number="27">
+      <FileName>page30.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>27</Abbreviation>
+    </Book>
+    <Book Number="28">
+      <FileName>page31.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>28</Abbreviation>
+    </Book>
+    <Book Number="29">
+      <FileName>page32.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>29</Abbreviation>
+    </Book>
+    <Book Number="30">
+      <FileName>page33.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>30</Abbreviation>
+    </Book>
+    <Book Number="31">
+      <FileName>page34.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>31</Abbreviation>
+    </Book>
+    <Book Number="32">
+      <FileName>page35.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>32</Abbreviation>
+    </Book>
+    <Book Number="33">
+      <FileName>page36.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>33</Abbreviation>
+    </Book>
+    <Book Number="34">
+      <FileName>page37.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>34</Abbreviation>
+    </Book>
+    <Book Number="35">
+      <FileName>page38.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>35</Abbreviation>
+    </Book>
+    <Book Number="36">
+      <FileName>page39.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>36</Abbreviation>
+    </Book>
+    <Book Number="37">
+      <FileName>page40.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>37</Abbreviation>
+    </Book>
+    <Book Number="38">
+      <FileName>page41.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>38</Abbreviation>
+    </Book>
+    <Book Number="39">
+      <FileName>page42.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>39</Abbreviation>
+    </Book>
+    <Book Number="40">
+      <FileName>page43.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>40</Abbreviation>
+    </Book>
+    <Book Number="41">
+      <FileName>page44.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>41</Abbreviation>
+    </Book>
+    <Book Number="42">
+      <FileName>page45.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>42</Abbreviation>
+    </Book>
+    <Book Number="43">
+      <FileName>page46.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>43</Abbreviation>
+    </Book>
+    <Book Number="44">
+      <FileName>page47.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>44</Abbreviation>
+    </Book>
+    <Book Number="45">
+      <FileName>page48.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>45</Abbreviation>
+    </Book>
+    <Book Number="46">
+      <FileName>page49.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>46</Abbreviation>
+    </Book>
+    <Book Number="47">
+      <FileName>page50.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>47</Abbreviation>
+    </Book>
+    <Book Number="48">
+      <FileName>page51.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>48</Abbreviation>
+    </Book>
+    <Book Number="49">
+      <FileName>page52.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>49</Abbreviation>
+    </Book>
+    <Book Number="50">
+      <FileName>page53.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>50</Abbreviation>
+    </Book>
+    <Book Number="51">
+      <FileName>page54.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>51</Abbreviation>
+    </Book>
+    <Book Number="52">
+      <FileName>page55.htm</FileName>
+      <Name>Empty</Name>
+      <Chapters />
+      <Abbreviation>52</Abbreviation>
     </Book>
   </Books>
 </LooseCanon>

@@ -1,4 +1,5 @@
 ﻿using CsQuery;
+using Fsm.Common.Services.ConsoleApp;
 using Fsm.DataScraper.Models;
 using System;
 using System.Collections.Generic;
@@ -17,20 +18,23 @@ namespace Fsm.DataScraper.Services
         [DllImport("Shlwapi.dll", CharSet = CharSet.Unicode)]
         static extern int StrCmpLogicalW(string psz1, string psz2);
 
-        public List<Book> GetPages(string pageDirectory, string pageName = null, int? bookNumber = null)
+        public List<Book> GetPages(string pageDirectory)
         {
+            int? bookNumber = Prompt.GetInt("Book number to parse:");
+
             var pages = new List<Book>();
 
             var htmlPages = Directory.GetFiles(pageDirectory).ToList();
             htmlPages.Sort((x, y) => StrCmpLogicalW(x, y));
 
-            List<Abbreviation> abbreviations = ScrapeBooks(pages, htmlPages, pageName, bookNumber);
+            List<Abbreviation> abbreviations = ScrapeBooks(pages, htmlPages, bookNumber);
+            Console.WriteLine("{0} pages", pages.Count);
 
             var errors = SetAbbreviations(pages, abbreviations).ToList();
-            if (string.IsNullOrEmpty(pageName))
+            if (!bookNumber.HasValue)
                 errors.ForEach(Console.WriteLine);
                         
-            Console.WriteLine("{0} pages", pages.Count);
+            
             return pages;
         }
 
@@ -46,9 +50,8 @@ namespace Fsm.DataScraper.Services
             }
         }
 
-        private static List<Abbreviation> ScrapeBooks(List<Book> pages, List<string> htmlPages, string pageName = null, int? bookNumber = null)
+        private static List<Abbreviation> ScrapeBooks(List<Book> books, List<string> htmlPages, int? bookNumber = null)
         {
-            var specificPage = !string.IsNullOrEmpty(pageName) && bookNumber.HasValue;
             List<Abbreviation> abbreviations = null;
 
             foreach (var htmlPage in htmlPages)
@@ -57,16 +60,15 @@ namespace Fsm.DataScraper.Services
                 {
                     case ("page3.htm"):
                         {
-                            abbreviations = new AbbreviationScraper(htmlPage, pages.Count - 1).GetAbbreviations().ToList();
+                            abbreviations = new AbbreviationScraper(htmlPage, books.Count - 1).GetAbbreviations().ToList();
                             break;
                         }
                     default:
                         {
-                            if ( !specificPage || Path.GetFileName(htmlPage) == pageName)
-                            {
-                                var page = new DefaultScraper(htmlPage, specificPage ? bookNumber.Value -1 : pages.Count - 1, true).Scrape();
-                                pages.Add(page);
-                            }
+                            if (!bookNumber.HasValue || bookNumber.Value == books.Count)
+                                books.Add(new DefaultScraper(htmlPage, books.Count - 1 , bookNumber.HasValue).Scrape());
+                            else
+                                books.Add(new EmptyScraper(htmlPage, books.Count - 1).Scrape());
                             break;
                         }
                 }
