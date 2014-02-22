@@ -48,13 +48,16 @@ namespace Fsm.DataScraper.Services
             new ReplaceParagraphRule("32 The third", "43 The third") { BookNumber = 9, ChapterNumber = 2, VerseNumber = 23 },
             new ReplaceParagraphRule("33 Last but", "44 Last but") { BookNumber = 9, ChapterNumber = 2, VerseNumber = 23 },
 
-            new ChapterHasStrongTitle { BookNumber = 11 },
+            new ChapterHasStrongTitle(false) { BookNumber = 11 },
+            new ParagraphStartRule(27) { BookNumber = 11, ChapterNumber = 1, VerseNumber = 0 },
+
             new ChapterHasStrongTitle { BookNumber = 12 },
 
             new BookNameReplaceRule("Numberof", "Number of") { BookNumber = 14 },
             new BookNameRemoveRule(":") { BookNumber = 14 },
 
-            new ChapterHasStrongTitle { BookNumber = 15 },
+            new ChapterHasStrongTitle(false) { BookNumber = 15 },
+            new ParagraphStartRule(27) { BookNumber = 15, ChapterNumber = 1, VerseNumber = 0 },
 
             new BookNameRemoveRule("as passed to Solipsy") { BookNumber = 16 },
 
@@ -79,7 +82,8 @@ namespace Fsm.DataScraper.Services
             new BookAbbreviationRule("Mu 1") {BookNumber = 34 },
             new BookAbbreviationRule("Mu 2") {BookNumber = 35 },
 
-            new ChapterHasStrongTitle { BookNumber = 36 },
+            new ChapterHasStrongTitle(false) { BookNumber = 36 },
+            new ParagraphStartRule(27) { BookNumber = 36, ChapterNumber = 1, VerseNumber = 0 },
 
             new BookNameReplaceRule("From", "from") { BookNumber = 37 },
             
@@ -148,7 +152,7 @@ namespace Fsm.DataScraper.Services
         {
             var result = paragraph;
 
-            foreach(var rule in _rules.OfType<ReplaceParagraphRule>().Where(p => p.Required(book.Number, chapter.Number, chapter.Verses.Count)))
+            foreach(var rule in _rules.OfType<IParagraphCleanupRule>().Where(p => p.Required(book.Number, chapter.Number, chapter.Verses.Count)))
                 result = rule.Clean(result);
 
             return result;
@@ -280,7 +284,10 @@ namespace Fsm.DataScraper.Services
 
                     if (verse.Text.StartsWith(verseNumber.ToString()))
                     {
-                        verse.Text = verse.Text.Substring(verseNumber.ToString().Length).Replace("~", "").Trim();
+                        var length = verseNumber.ToString().Length;
+                        if (verse.Text.StartsWith(string.Format("{0}.", verseNumber)))
+                            length++;
+                        verse.Text = verse.Text.Substring(length).Replace("~", "").Trim();
                         verses.Add(verse);
                     }
                     else

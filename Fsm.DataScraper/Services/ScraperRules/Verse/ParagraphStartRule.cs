@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Fsm.DataScraper.Services.ScraperRules
 {
-    interface IParagraphCleanupRule : IScraperRule
+    public class ParagraphStartRule : StartRule, IParagraphCleanupRule
     {
-        string Clean(string paragraph);
+        public ParagraphStartRule(int startAt) : base(startAt) { }
     }
 }

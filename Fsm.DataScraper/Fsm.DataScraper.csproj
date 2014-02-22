@@ -72,11 +72,13 @@
     <Compile Include="Services\ScraperRules\Chapter\FirstChapterTwelve.cs" />
     <Compile Include="Services\ScraperRules\Chapter\IChapterRolloverRule.cs" />
     <Compile Include="Services\ScraperRules\Chapter\IFirstChapterRule.cs" />
+    <Compile Include="Services\ScraperRules\StartRule.cs" />
     <Compile Include="Services\ScraperRules\IScraperRule.cs" />
     <Compile Include="Services\ScraperRules\ScraperRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\IParagraphCleanupRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\IVerseCleanupRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\IVerseOffsetRule.cs" />
+    <Compile Include="Services\ScraperRules\Verse\ParagraphStartRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\RemoveTextRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\ReplaceParagraphRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\ReplaceTextRule.cs" />
