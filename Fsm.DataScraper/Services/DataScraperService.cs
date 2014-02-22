@@ -26,7 +26,6 @@ namespace Fsm.DataScraper.Services
 
             List<Abbreviation> abbreviations = ScrapeBooks(pages, htmlPages, pageName, bookNumber);
 
-            Console.WriteLine("this is happening");
             var errors = SetAbbreviations(pages, abbreviations).ToList();
             if (string.IsNullOrEmpty(pageName))
                 errors.ForEach(Console.WriteLine);
@@ -37,7 +36,6 @@ namespace Fsm.DataScraper.Services
 
         private IEnumerable<string> SetAbbreviations(List<Book> pages, List<Abbreviation> abbreviations)
         {
-            Console.WriteLine("this is happening");
             foreach (var abbreviation in abbreviations)
             {
                 var book = pages.SingleOrDefault(p => p != null && p.Name == abbreviation.Name);
@@ -66,7 +64,7 @@ namespace Fsm.DataScraper.Services
                         {
                             if ( !specificPage || Path.GetFileName(htmlPage) == pageName)
                             {
-                                var page = new DefaultScraper(htmlPage, specificPage ? bookNumber.Value -1 : pages.Count - 1).Scrape();
+                                var page = new DefaultScraper(htmlPage, specificPage ? bookNumber.Value -1 : pages.Count - 1, true).Scrape();
                                 pages.Add(page);
                             }
                             break;

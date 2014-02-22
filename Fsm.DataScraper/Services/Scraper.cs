@@ -12,9 +12,11 @@ namespace Fsm.DataScraper.Services
     public abstract class Scraper
     {
         protected readonly Book _book;
+        protected readonly bool _interactive;
 
-        public Scraper(string htmlPagePath, int bookNumber)
+        public Scraper(string htmlPagePath, int bookNumber, bool interactive = false)
         {
+            _interactive = interactive;
             _book = new Book
             {
                 Number = bookNumber + 1,

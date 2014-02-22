@@ -19,10 +19,12 @@ namespace Fsm.DataScraper.Services
         {
             new VerseOffsetBumpByFive { BookNumber = 5, ChapterNumber = 12 },
             new FirstChapterTwelve { BookNumber = 5 },
-            new ChapterIsTildeTerminated { BookNumber = 3 }
+            new ChapterIsTildeTerminated { BookNumber = 3 },
+            new RemoveTildeRule { BookNumber = 3, ChapterNumber = 3, VerseNumber = 48 },
+            new RemoveTildeRule { BookNumber = 3, ChapterNumber = 4, VerseNumber = 57 }
         };
 
-        public DefaultScraper(string htmlPagePath, int pageNumber) : base(htmlPagePath, pageNumber) { }
+        public DefaultScraper(string htmlPagePath, int pageNumber, bool _interactive) : base(htmlPagePath, pageNumber, _interactive) { }
 
         public override Book Scrape()
         {
@@ -39,8 +41,6 @@ namespace Fsm.DataScraper.Services
             Console.WriteLine("{0:00}. {1} {2}", _book.Number, _book.FileName, _book.Name);
             return _book;
         }
-
-        
 
         private void ExtractText(Book book)
         {
@@ -94,10 +94,55 @@ namespace Fsm.DataScraper.Services
 
         private Chapter DetectChapterRollover(Book book, Chapter chapter, string paragraph)
         {
+            var newChapter = chapter;
             var rule = _rules.OfType<IChapterRolloverRule>().SingleOrDefault(p => p.Required(book.Number, chapter.Number));
             if (rule != null)
-                return rule.GetChapter(book, chapter, paragraph);
-            return chapter;
+                newChapter = rule.GetChapter(book, chapter, paragraph);
+
+
+
+            if (newChapter.Number != chapter.Number)
+            {
+                VerseCleanup(book.Number, chapter);
+                
+                if (_interactive)
+                    ShowEndOfChapter(chapter);
+            }
+
+            return newChapter;
+        }
+
+        private void VerseCleanup(int bookNumber, Chapter chapter)
+        {
+            for(int i = 0; i< chapter.Verses.Count;i++)
+            {
+                var rule = _rules.OfType<IVerseCleanupRule>().SingleOrDefault(p => p.Required(bookNumber, chapter.Number, chapter.Verses.ElementAt(i).Number));
+                if (rule != null)
+                    chapter.Verses.ElementAt(i).Text = rule.Clean(chapter.Verses.ElementAt(i).Text);
+            }
+        }
+
+        private void ShowEndOfChapter(Chapter chapter)
+        {
+            Print(string.Format("Chapter {0:00} ", chapter.Number).PadRight(79, '*'));
+            if (chapter.Verses.Count > 3)
+                PrintVerses(chapter.Verses.Skip(chapter.Verses.Count - 3));
+            else
+                PrintVerses(chapter.Verses);
+        }
+
+        private void Print(string format, params object[] args)
+        {
+            Console.WriteLine(format, args);
+            Console.WriteLine();
+        }
+
+        private void PrintVerses(IEnumerable<Verse> verses)
+        {
+            foreach (var verse in verses)
+                Print("{0:00}. {1}", verse.Number, verse.Text);
+            Console.ReadKey();
+            Console.WriteLine();
         }
         
         private List<Verse> GetVerses(string paragraph, int[] intMatches, int verseOffset)
