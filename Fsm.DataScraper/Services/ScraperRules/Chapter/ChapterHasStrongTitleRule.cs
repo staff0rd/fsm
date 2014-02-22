@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace Fsm.DataScraper.Services.ScraperRules
 {
-    public class FirstChapterTwelve : ScraperRule, IFirstChapterRule
+    public class ChapterHasStrongTitleRule : ChapterHasTitleRule, IChapterRolloverRule
     {
-        public Chapter GetChapter()
-        {
-            return new Chapter { Number = 12 };
-        }
+        public ChapterHasStrongTitleRule(bool? skipParagraph = null) : base("<strong>Chapter", skipParagraph) {}
     }
 }

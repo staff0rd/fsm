@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fsm.DataScraper.Services.ScraperRules
 {
-    public class ChapterLastVerse : ScraperRule, IChapterRolloverRule
+    public class ChapterLastVerseRule : ScraperRule, IChapterRolloverRule
     {
         public Chapter GetChapter(Book book, Chapter chapter, string paragraph, out bool skipParagraph)
         {

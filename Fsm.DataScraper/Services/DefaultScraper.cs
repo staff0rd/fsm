@@ -18,71 +18,81 @@ namespace Fsm.DataScraper.Services
     {
         List<ScraperRule> _rules = new List<ScraperRule>
         {
-            new RemoveTextRule("<br />"),
+            new VerseRemoveRule("<br />"),
 
             new TerminateRule(181)  {BookNumber = 1, ChapterNumber = 1, VerseNumber = 8 },
 
             new TerminateRule(6) { BookNumber = 2, ChapterNumber = 1, VerseNumber = 23 },
             new ReplaceTextRule(",",".") { BookNumber = 2, ChapterNumber = 1, VerseNumber = 23 },
 
-            new ChapterHasStrongTitle { BookNumber = 3 },
-            new RemoveTextRule("~") { BookNumber = 3, ChapterNumber = 3, VerseNumber = 48 },
-            new RemoveTextRule("~") { BookNumber = 3, ChapterNumber = 4, VerseNumber = 57 },
-            new RemoveTextRule("Here endeth the second book.") { BookNumber =3, ChapterNumber = 2, VerseNumber = 46},
-            new RemoveTextRule("Here Endeth the Third Book") { BookNumber =3, ChapterNumber = 3, VerseNumber = 48},
-            new RemoveTextRule("Here endeth the Fourth Book") { BookNumber =3, ChapterNumber = 4, VerseNumber = 57},
+            new ChapterHasStrongTitleRule { BookNumber = 3 },
+            new VerseRemoveRule("~") { BookNumber = 3, ChapterNumber = 3, VerseNumber = 48 },
+            new VerseRemoveRule("~") { BookNumber = 3, ChapterNumber = 4, VerseNumber = 57 },
+            new VerseRemoveRule("Here endeth the second book.") { BookNumber =3, ChapterNumber = 2, VerseNumber = 46},
+            new VerseRemoveRule("Here Endeth the Third Book") { BookNumber =3, ChapterNumber = 3, VerseNumber = 48},
+            new VerseRemoveRule("Here endeth the Fourth Book") { BookNumber =3, ChapterNumber = 4, VerseNumber = 57},
             new ReplaceTextRule(" RAmen", ".  RAmen.") { BookNumber = 3, ChapterNumber = 5, VerseNumber= 44 },
 
             new BookNameTerminateRule(35) { BookNumber = 5},
-            new OffsetBumpByFive { BookNumber = 5, ChapterNumber = 12 },
-            new FirstChapterTwelve { BookNumber = 5 },
-            new ChapterLastVerse { BookNumber = 5, ChapterNumber = 12, VerseNumber = 15 },
+            new VerseStartRule(5) { BookNumber = 5, ChapterNumber = 12 },
+            new ChapterStartRule(12) { BookNumber = 5 },
+            new ChapterLastVerseRule { BookNumber = 5, ChapterNumber = 12, VerseNumber = 15 },
 
-            new ChapterHasEmTitle { BookNumber = 6 },
+            new ChapterHasEmTitleRule { BookNumber = 6 },
 
-            new ChapterHasStrongTitle { BookNumber = 7 },
+            new ChapterHasStrongTitleRule { BookNumber = 7 },
             
-            new ChapterHasStrongTitle { BookNumber = 8 },
+            new ChapterHasStrongTitleRule { BookNumber = 8 },
 
-            new ChapterHasStrongTitle { BookNumber = 9 },
-            new ReplaceParagraphRule("32 The third", "43 The third") { BookNumber = 9, ChapterNumber = 2, VerseNumber = 23 },
-            new ReplaceParagraphRule("33 Last but", "44 Last but") { BookNumber = 9, ChapterNumber = 2, VerseNumber = 23 },
+            new ChapterHasStrongTitleRule { BookNumber = 9 },
+            new ParagraphReplaceRule("32 The third", "43 The third") { BookNumber = 9, ChapterNumber = 2, VerseNumber = 23 },
+            new ParagraphReplaceRule("33 Last but", "44 Last but") { BookNumber = 9, ChapterNumber = 2, VerseNumber = 23 },
 
-            new ChapterHasStrongTitle(false) { BookNumber = 11 },
+            new ChapterHasStrongTitleRule(false) { BookNumber = 11 },
             new ParagraphStartRule(27) { BookNumber = 11, ChapterNumber = 1, VerseNumber = 0 },
 
-            new ChapterHasStrongTitle { BookNumber = 12 },
+            new ChapterHasStrongTitleRule { BookNumber = 12 },
 
             new BookNameReplaceRule("Numberof", "Number of") { BookNumber = 14 },
             new BookNameRemoveRule(":") { BookNumber = 14 },
 
-            new ChapterHasStrongTitle(false) { BookNumber = 15 },
+            new ChapterHasStrongTitleRule(false) { BookNumber = 15 },
             new ParagraphStartRule(27) { BookNumber = 15, ChapterNumber = 1, VerseNumber = 0 },
 
             new BookNameRemoveRule("as passed to Solipsy") { BookNumber = 16 },
 
-            new ChapterHasStrongTitle { BookNumber = 20 },
-            new ChapterHasStrongTitle { BookNumber = 21 },
-            new ChapterHasStrongTitle { BookNumber = 23 },
-            new ChapterHasStrongTitle { BookNumber = 24 },
+            new ChapterHasTitleRule("<strong>P") { BookNumber = 19 },
+            new ParagraphReplaceRule("<br />", " ") { BookNumber = 19, ChapterNumber = 2 },
+            
+            new ParagraphReplaceRule("32. And I shall ponder", "33. And I shall ponder") { BookNumber = 19, ChapterNumber = 9 },
+
+            new ChapterHasStrongTitleRule { BookNumber = 20 },
+
+            new ChapterHasStrongTitleRule { BookNumber = 21 },
+
+            new ChapterHasStrongTitleRule { BookNumber = 23 },
+
+            new ChapterHasStrongTitleRule { BookNumber = 24 },
 
             new BookNameRemoveRule(".") { BookNumber = 25 },
 
-            new ChapterHasStrongTitle { BookNumber = 26 },
-            new ChapterHasStrongTitle { BookNumber = 28 },
+            new ChapterHasStrongTitleRule { BookNumber = 26 },
+
+            new ChapterHasStrongTitleRule { BookNumber = 28 },
 
             new BookNameSetRule("Revelations of St. Jason") { BookNumber = 29 },
 
-            new ChapterHasStrongTitle { BookNumber = 30 },
+            new ChapterHasStrongTitleRule { BookNumber = 30 },
             
-            new ChapterHasStrongTitle { BookNumber = 31 },
+            new ChapterHasStrongTitleRule { BookNumber = 31 },
 
             new BookAbbreviationRule("Bobby") {BookNumber = 32 },
             
             new BookAbbreviationRule("Mu 1") {BookNumber = 34 },
+
             new BookAbbreviationRule("Mu 2") {BookNumber = 35 },
 
-            new ChapterHasStrongTitle(false) { BookNumber = 36 },
+            new ChapterHasStrongTitleRule(false) { BookNumber = 36 },
             new ParagraphStartRule(27) { BookNumber = 36, ChapterNumber = 1, VerseNumber = 0 },
 
             new BookNameReplaceRule("From", "from") { BookNumber = 37 },
@@ -95,12 +105,12 @@ namespace Fsm.DataScraper.Services
             
             new BookNameReplaceRule("From", "from") { BookNumber = 41 },
 
-            new ChapterHasStrongTitle { BookNumber = 42 },
+            new ChapterHasStrongTitleRule { BookNumber = 42 },
             
-            new ChapterHasStrongTitle { BookNumber = 43 },
+            new ChapterHasStrongTitleRule { BookNumber = 43 },
             new BookAbbreviationRule("Hill") {BookNumber = 43 },
             
-            new ChapterHasStrongTitle { BookNumber = 45 },
+            new ChapterHasStrongTitleRule { BookNumber = 45 },
             new BookAbbreviationRule("CCC") {BookNumber = 45 },
 
             new BookNameRemoveRule(".") { BookNumber = 47 },

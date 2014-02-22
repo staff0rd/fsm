@@ -7,18 +7,20 @@ using System.Threading.Tasks;
 
 namespace Fsm.DataScraper.Services.ScraperRules
 {
-    class ChapterHasStrongTitle : ScraperRule, IChapterRolloverRule
+    public class ChapterHasTitleRule : ScraperRule, IChapterRolloverRule
     {
         private bool? _skipParagraph;
+        string _startsWith;
 
-        public ChapterHasStrongTitle(bool? skipParagraph = null)
+        public ChapterHasTitleRule(string startsWith, bool? skipParagraph = null)
         {
             _skipParagraph = skipParagraph;
+            _startsWith = startsWith;
         }
 
         public Chapter GetChapter(Book book, Chapter chapter, string paragraph, out bool skipParagraph)
         {
-            if (paragraph.Contains("<strong>Chapter"))
+            if (paragraph.Contains(_startsWith))
             {
                 skipParagraph = _skipParagraph ?? true;
                 if (chapter.Verses.Any())

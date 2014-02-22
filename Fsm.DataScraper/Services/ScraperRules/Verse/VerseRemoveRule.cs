@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Fsm.DataScraper.Services.ScraperRules
 {
-    public class ReplaceParagraphRule : ReplaceTextRule, IParagraphCleanupRule
+    public class VerseRemoveRule : RemoveTextRule, IVerseCleanupRule
     {
-        public ReplaceParagraphRule(string oldText, string newText) : base(oldText, newText) { }
+        public VerseRemoveRule(string oldText) : base(oldText) { }
     }
 }

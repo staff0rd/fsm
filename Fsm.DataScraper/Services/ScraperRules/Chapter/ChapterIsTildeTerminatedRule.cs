@@ -1,24 +1,23 @@
-﻿using System;
+﻿using Fsm.DataScraper.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Fsm.DataScraper.Models;
 
 namespace Fsm.DataScraper.Services.ScraperRules
 {
-    public class ChapterHasEmTitle : ScraperRule, IChapterRolloverRule
+    class ChapterIsTildeTerminatedRule : ScraperRule, IChapterRolloverRule
     {
         public Chapter GetChapter(Book book, Chapter chapter, string paragraph, out bool skipParagraph)
         {
-            if (paragraph.Contains("<em>Chapter") && chapter.Verses.Any())
+            skipParagraph = false;
+            if (paragraph.Contains("~~~~~~~~~"))
             {
                 var newChapter = new Chapter { Number = book.Chapters.Count + 1 };
                 book.Chapters.Add(newChapter);
-                skipParagraph = true;
                 return newChapter;
             }
-            skipParagraph = false;
             return chapter;
         }
     }

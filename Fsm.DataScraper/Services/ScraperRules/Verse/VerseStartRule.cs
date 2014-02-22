@@ -7,11 +7,18 @@ using System.Threading.Tasks;
 
 namespace Fsm.DataScraper.Services.ScraperRules
 {
-    public class OffsetBumpByFive : ScraperRule, IVerseOffsetRule
+    public class VerseStartRule : ScraperRule, IVerseOffsetRule
     {
+        readonly int _startNumber;
+
+        public VerseStartRule(int startNumber)
+        {
+            _startNumber = startNumber;
+        }
+
         public int GetVerseOffset(Chapter chapter)
         {
-            return chapter.Verses.Count + 5;
+            return chapter.Verses.Count + _startNumber;
         }
     }
 }
