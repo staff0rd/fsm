@@ -11,7 +11,7 @@ namespace Fsm.DataScraper.Services.ScraperRules
     {
         public int[] GetMatches(string paragraph)
         {
-            return Regex.Matches(paragraph, @"\d:\d").OfType<Match>().Select(p => p.Index).ToArray();
+            return Regex.Matches(paragraph, @"(\d+):(\d+)").OfType<Match>().Select(p => p.Index).ToArray();
         }
         
         public string CleanVerse(string verse)

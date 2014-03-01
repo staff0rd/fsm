@@ -122,6 +122,14 @@ namespace Fsm.DataScraper.Services
             new ChapterHasStrongTitleRule { BookNumber = 30 },
             
             new ChapterHasStrongTitleRule { BookNumber = 31 },
+            new VerseTerminateRule(35) { BookNumber = 31, ChapterNumber = 1, VerseNumber = 7 },
+            new VerseTerminateRule(78) { BookNumber = 31, ChapterNumber = 2, VerseNumber = 6 },
+
+            new VerseTerminateRule(113) { BookNumber = 32, ChapterNumber = 1, VerseNumber = 31 },
+            new VerseTerminateRule(35) { BookNumber = 32, ChapterNumber = 1, VerseNumber = 39 },
+
+            new VerseTerminateRule(28) { BookNumber = 34, ChapterNumber = 1, VerseNumber = 59 },
+            new VerseTerminateRule(5) { BookNumber = 35, ChapterNumber = 1, VerseNumber = 56 },
 
             new BookAbbreviationRule("Bobby") {BookNumber = 32 },
             
@@ -129,8 +137,12 @@ namespace Fsm.DataScraper.Services
 
             new BookAbbreviationRule("Mu 2") {BookNumber = 35 },
 
-            new ChapterHasStrongTitleRule(false) { BookNumber = 36 },
-            new ParagraphStartRule(27) { BookNumber = 36, ChapterNumber = 1, VerseNumber = 0 },
+            new ChapterLastVerseRule { BookNumber = 36, ChapterNumber = 1, VerseNumber = 7},
+            new VerseReplaceRule("</strong>", "") { BookNumber = 36, ChapterNumber = 1, VerseNumber = 1 },
+            new VerseReplaceRule("1 ", "") { BookNumber = 36, ChapterNumber = 1, VerseNumber = 1 },
+            new ChapterLastVerseRule { BookNumber = 36, ChapterNumber = 2, VerseNumber = 5},
+            new ChapterLastVerseRule { BookNumber = 36, ChapterNumber = 3, VerseNumber = 15},
+            new VerseTerminateRule(231) { BookNumber = 36, ChapterNumber = 4, VerseNumber = 9 },
 
             new BookNameReplaceRule("From", "from") { BookNumber = 37 },
             
@@ -142,19 +154,49 @@ namespace Fsm.DataScraper.Services
             
             new BookNameReplaceRule("From", "from") { BookNumber = 41 },
 
-            new ChapterHasStrongTitleRule { BookNumber = 42 },
+            new ChapterLastVerseRule { BookNumber = 42, ChapterNumber = 1, VerseNumber = 6 },
+            new ChapterLastVerseRule { BookNumber = 42, ChapterNumber = 2, VerseNumber = 16 },
+            new ChapterLastVerseRule { BookNumber = 42, ChapterNumber = 3, VerseNumber = 11 },
+            new VerseTerminateRule(28) { BookNumber = 42, ChapterNumber = 4, VerseNumber = 2 },
             
             new ChapterHasStrongTitleRule { BookNumber = 43 },
             new BookAbbreviationRule("Hill") {BookNumber = 43 },
             
             new ChapterHasStrongTitleRule { BookNumber = 45 },
             new BookAbbreviationRule("CCC") {BookNumber = 45 },
+            new VerseTerminateRule(134) { BookNumber = 45, ChapterNumber = 2, VerseNumber = 13 },
 
             new BookNameRemoveRule(".") { BookNumber = 47 },
+            new VerseNumbersColonSeparatedRule { BookNumber = 47 },
+            new ChapterLastVerseRule { BookNumber = 47, ChapterNumber = 1, VerseNumber = 4 },
+            new ChapterLastVerseRule { BookNumber = 47, ChapterNumber = 2, VerseNumber = 5 },
+            new ChapterLastVerseRule { BookNumber = 47, ChapterNumber = 3, VerseNumber = 8 },
+            new ChapterLastVerseRule { BookNumber = 47, ChapterNumber = 4, VerseNumber = 6 },
             
             new BookNameSetRule("Revelations 1: The Book of Revealed Crapola") { BookNumber = 48 },
+            new VerseNumbersColonSeparatedRule { BookNumber = 48 },
+            new ChapterLastVerseRule { BookNumber = 48, ChapterNumber = 1, VerseNumber = 6 },
+            new ChapterLastVerseRule { BookNumber = 48, ChapterNumber = 2, VerseNumber = 4 },
+            new VerseRemoveRule("<em>") { BookNumber = 48, ChapterNumber = 2 },
+            new VerseRemoveRule("</em>") { BookNumber = 48, ChapterNumber = 2 },
+            new ChapterLastVerseRule { BookNumber = 48, ChapterNumber = 3, VerseNumber = 7 },
+            new ChapterLastVerseRule { BookNumber = 48, ChapterNumber = 4, VerseNumber = 8 },
+            new ChapterLastVerseRule { BookNumber = 48, ChapterNumber = 5, VerseNumber = 21 },
+            new ChapterLastVerseRule { BookNumber = 48, ChapterNumber = 6, VerseNumber = 10 },
+            new ChapterLastVerseRule { BookNumber = 48, ChapterNumber = 7, VerseNumber = 7 },
+            new ChapterLastVerseRule { BookNumber = 48, ChapterNumber = 8, VerseNumber = 22 },
+            new ChapterLastVerseRule { BookNumber = 48, ChapterNumber = 9, VerseNumber = 40 },
+            new ChapterLastVerseRule { BookNumber = 48, ChapterNumber = 10, VerseNumber = 34 },
+            new ChapterLastVerseRule { BookNumber = 48, ChapterNumber = 11, VerseNumber = 49 },
+            new ChapterLastVerseRule { BookNumber = 48, ChapterNumber = 12, VerseNumber = 50 },
+            new ParagraphRemoveRule("<strong>", "</strong>", "<em>", "</em>") { BookNumber = 48 },
+            new ParagraphReplaceRule("20. Bu", "12:20. Bu") { BookNumber = 48, ChapterNumber = 12 },
+            new ParagraphSplitBook48Rule { BookNumber = 48 },
+
+            new ChapterHasTitleRule("Chapter", false) { BookNumber = 49 },
+
+            new BookNameRemoveRule(".") { BookNumber = 50 },
             
-            new BookNameRemoveRule(".") { BookNumber = 49 },
         };
 
         public DefaultScraper(string htmlPagePath, int pageNumber, bool _interactive) : base(htmlPagePath, pageNumber, _interactive) { }
