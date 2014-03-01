@@ -48,6 +48,11 @@ namespace Fsm.DataScraper.Services
             new ParagraphReplaceRule("32 The third", "43 The third") { BookNumber = 9, ChapterNumber = 2, VerseNumber = 23 },
             new ParagraphReplaceRule("33 Last but", "44 Last but") { BookNumber = 9, ChapterNumber = 2, VerseNumber = 23 },
 
+            new VerseNumbersColonSeparatedRule() { BookNumber = 10 },
+            new ChapterLastVerseRule() { BookNumber = 10, ChapterNumber = 1, VerseNumber = 90 },
+            new ChapterLastVerseRule() { BookNumber = 10, ChapterNumber = 2, VerseNumber = 158 },
+            new ChapterLastVerseRule() { BookNumber = 10, ChapterNumber = 3, VerseNumber = 49 },
+
             new ChapterHasStrongTitleRule(false) { BookNumber = 11 },
             new ParagraphStartRule(27) { BookNumber = 11, ChapterNumber = 1, VerseNumber = 0 },
 
@@ -170,15 +175,25 @@ namespace Fsm.DataScraper.Services
 
         private void ProcessParagraph(Book book, Chapter chapter, string paragraph)
         {
-            var matches = Regex.Matches(paragraph, @"\d+").OfType<Match>().Select(p => p.Index).ToArray();
+            var matches = GetMatches(book.Number, chapter.Number, paragraph);
 
             var verseOffset = DetermineVerseOffset(book, chapter);
 
-            var versesToAdd = GetVerses(paragraph, matches, verseOffset);
+            var versesToAdd = GetVerses(book.Number, chapter.Number, paragraph, matches, verseOffset);
             if (versesToAdd.Any())
                 chapter.Verses.AddRange(versesToAdd);
             else if (chapter.Verses.Any())
                 chapter.Verses.Last().Text += " " + paragraph;
+        }
+
+        private int[] GetMatches(int bookNumber, int chapterNumber, string paragraph)
+        {
+
+            var rule = _rules.OfType<IVerseMatchRule>().SingleOrDefault(p => p.Required(bookNumber, chapterNumber));
+            if (rule != null)
+                return rule.GetMatches(paragraph);
+            
+            return Regex.Matches(paragraph, @"\d+").OfType<Match>().Select(p => p.Index).ToArray();
         }
 
         private void ReviewChapters(Book book, IEnumerable<string> paragraphs)
@@ -277,7 +292,7 @@ namespace Fsm.DataScraper.Services
                 Print("{0:00}. {1}", verse.Number, verse.Text);
         }
         
-        private List<Verse> GetVerses(string paragraph, int[] intMatches, int verseOffset)
+        private List<Verse> GetVerses(int bookNumber, int chapterNumber, string paragraph, int[] intMatches, int verseOffset)
         {
             try
             {
@@ -292,7 +307,13 @@ namespace Fsm.DataScraper.Services
                     else
                         verse = new Verse { Number = verseNumber, Text = paragraph.Substring(intMatches[i]).Trim() };
 
-                    if (verse.Text.StartsWith(verseNumber.ToString()))
+                    var rule = _rules.OfType<IVerseMatchRule>().SingleOrDefault(p => p.Required(bookNumber, chapterNumber));
+                    if (rule != null)
+                    {
+                        verse.Text = rule.CleanVerse(verse.Text);
+                        verses.Add(verse);
+                    }
+                    else if (verse.Text.StartsWith(verseNumber.ToString()))
                     {
                         var length = verseNumber.ToString().Length;
                         if (verse.Text.StartsWith(string.Format("{0}.", verseNumber)))
@@ -311,7 +332,7 @@ namespace Fsm.DataScraper.Services
                 var remainingIndicies = intMatches.Where(p => p != e.Index).ToArray();
                 if (remainingIndicies.Length == 0)
                     Console.WriteLine("Problem");
-                return GetVerses(paragraph, remainingIndicies, verseOffset);
+                return GetVerses(bookNumber, chapterNumber, paragraph, remainingIndicies, verseOffset);
             }
         }
     }

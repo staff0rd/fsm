@@ -38,7 +38,7 @@ namespace Fsm.DataScraper
 
             looseCanon.Books = new DataScraperService().GetPages(looseCanon.Url);
 
-            XmlSerializerService.Serialize<LooseCanon>(looseCanon, @"D:\git\fsm\trunk\canon.xml");
+            XmlSerializerService.Serialize<LooseCanon>(looseCanon, @"D:\git\fsm\canon.xml");
 
             Console.WriteLine("Finished");
             Console.ReadKey();

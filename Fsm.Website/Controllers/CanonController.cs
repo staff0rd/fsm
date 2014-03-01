@@ -17,7 +17,7 @@ namespace Fsm.Website.Controllers
         {
             get
             {
-                _canon = XmlSerializerService.Deserialize<LooseCanon>(@"D:\git\fsm\trunk\canon.xml");
+                _canon = XmlSerializerService.Deserialize<LooseCanon>(@"D:\git\fsm\canon.xml");
                 _canon.Books = _canon.Books.Where(p => p != null && p.Number > 0).ToList();
 
                 return _canon;
