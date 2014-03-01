@@ -64,6 +64,7 @@
     <Compile Include="Services\ScraperRules\Book\BookNameSetRule.cs" />
     <Compile Include="Services\ScraperRules\Book\BookNameTerminateRule.cs" />
     <Compile Include="Services\ScraperRules\Book\BookNameRemoveRule.cs" />
+    <Compile Include="Services\ScraperRules\Book\ParagraphSplitBook27Rule.cs" />
     <Compile Include="Services\ScraperRules\Book\IBookRule.cs" />
     <Compile Include="Services\ScraperRules\Book\ISplitParagraphsRule.cs" />
     <Compile Include="Services\ScraperRules\Book\ParagraphSplitBook29Rule.cs" />

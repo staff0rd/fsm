@@ -66,6 +66,7 @@ namespace Fsm.DataScraper.Services
             new ParagraphStartRule(27) { BookNumber = 15, ChapterNumber = 1, VerseNumber = 0 },
 
             new BookNameRemoveRule("as passed to Solipsy") { BookNumber = 16 },
+            new BookAbbreviationRule("Pasta") { BookNumber = 16 },
 
             new ChapterHasTitleRule("<strong>P") { BookNumber = 19 },
             new ParagraphReplaceRule("<br />", " ") { BookNumber = 19},
@@ -105,8 +106,8 @@ namespace Fsm.DataScraper.Services
 
             new ChapterHasStrongTitleRule { BookNumber = 26 },
 
-            new ParagraphReplaceRule("<em>", "") { BookNumber = 27 },
-            new ParagraphReplaceRule("</em>", "") { BookNumber = 27 },
+            new ParagraphRemoveRule("<em>", "</em>") { BookNumber = 27 },
+            new BookAbbreviationRule("Sol") { BookNumber = 27 },
 
             new ChapterLastVerseRule { BookNumber = 28, ChapterNumber = 1, VerseNumber = 4},
             new ChapterLastVerseRule { BookNumber = 28, ChapterNumber = 2, VerseNumber = 19},
@@ -193,9 +194,13 @@ namespace Fsm.DataScraper.Services
             new ParagraphReplaceRule("20. Bu", "12:20. Bu") { BookNumber = 48, ChapterNumber = 12 },
             new ParagraphSplitBook48Rule { BookNumber = 48 },
 
-            new ChapterHasTitleRule("Chapter", false) { BookNumber = 49 },
+            new BookNameRemoveRule(".") { BookNumber = 49 },
+            new ParagraphReplaceRule("; and the Flying", "; 9. and the Flying") { BookNumber = 49, ChapterNumber = 1, VerseNumber = 7 },
 
-            new BookNameRemoveRule(".") { BookNumber = 50 },
+            new ChapterHasTitleRule("Chapter", false) { BookNumber = 50 },
+            new BookAbbreviationRule("AAS") { BookNumber = 50 },
+            new VerseRemoveRule("1 ") { BookNumber = 50, ChapterNumber = 1, VerseNumber = 1 },
+            
             
         };
 
@@ -205,7 +210,7 @@ namespace Fsm.DataScraper.Services
         {
             DetermineBookName();
 
-            if (_book.Number > 0 && _book.Number < 50)
+            if (_book.Number > 0 && _book.Number < 51)
             {
                 ExtractText(_book);
             }

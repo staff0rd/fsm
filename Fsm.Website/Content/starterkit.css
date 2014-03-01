@@ -63,6 +63,7 @@
     text-align: justify;
     line-height: 40px;
     font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+    word-wrap: break-word;
 }
 
 .contents {
