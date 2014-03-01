@@ -72,11 +72,32 @@ namespace Fsm.DataScraper.Services
             new VerseRemoveRule("<strong>  </strong>") { BookNumber = 19},
             new ParagraphReplaceRule("32. And I shall ponder", "33. And I shall ponder") { BookNumber = 19, ChapterNumber = 9 },
 
-            new ChapterHasStrongTitleRule { BookNumber = 20 },
+            new ChapterLastVerseRule { BookNumber = 20, ChapterNumber = 1, VerseNumber = 53 },
+            new ChapterLastVerseRule { BookNumber = 20, ChapterNumber = 2, VerseNumber = 23 },
+            new ChapterLastVerseRule { BookNumber = 20, ChapterNumber = 3, VerseNumber = 80 },
+            new VerseTerminateRule(68) { BookNumber = 20, ChapterNumber = 3, VerseNumber = 80 },
+            new ChapterLastVerseRule { BookNumber = 20, ChapterNumber = 4, VerseNumber = 13 },
+            new VerseTerminateRule(76) { BookNumber = 20, ChapterNumber = 4, VerseNumber = 13 },
+            new VerseReplaceRule(",", ", ") { BookNumber = 20, ChapterNumber = 4 },
+            new VerseReplaceRule(",  ", ", ") { BookNumber = 20, ChapterNumber = 4 },
+            new VerseTerminateRule(209) { BookNumber = 20, ChapterNumber = 5, VerseNumber = 15 },
 
             new ChapterHasStrongTitleRule { BookNumber = 21 },
+            new ParagraphReplaceRule("8. was", "7. was") { BookNumber = 21, ChapterNumber = 5 },
 
-            new ChapterHasStrongTitleRule { BookNumber = 23 },
+            new ChapterLastVerseRule { BookNumber = 22, ChapterNumber = 1, VerseNumber = 24 },
+            new VerseTerminateRule(306) { BookNumber = 22, ChapterNumber = 1, VerseNumber = 24 },
+            new ChapterLastVerseRule { BookNumber = 22, ChapterNumber = 2, VerseNumber = 9 },
+            new VerseTerminateRule(284) { BookNumber = 22, ChapterNumber = 2, VerseNumber = 9 },
+            new ChapterLastVerseRule { BookNumber = 22, ChapterNumber = 3, VerseNumber = 17 },
+            new ChapterLastVerseRule { BookNumber = 22, ChapterNumber = 4, VerseNumber = 6 },
+            new VerseTerminateRule(150) { BookNumber = 22, ChapterNumber = 4, VerseNumber = 6 },
+            new ChapterLastVerseRule { BookNumber = 22, ChapterNumber = 5, VerseNumber = 3 },
+            new VerseTerminateRule(257) { BookNumber = 22, ChapterNumber = 5, VerseNumber = 3 },
+            new ChapterLastVerseRule { BookNumber = 22, ChapterNumber = 6, VerseNumber = 4 },
+
+            new ChapterLastVerseRule { BookNumber = 23, ChapterNumber = 1, VerseNumber = 62 },
+            new VerseNumbersSupRule { BookNumber = 23 },
 
             new ChapterHasStrongTitleRule { BookNumber = 24 },
 
@@ -160,6 +181,9 @@ namespace Fsm.DataScraper.Services
 
                 ProcessParagraph(book, chapter, processed);
             }
+
+            if (!book.Chapters.Last().Verses.Any())
+                book.Chapters.Remove(book.Chapters.Last());
 
             ReviewChapters(book, paragraphs);
         }

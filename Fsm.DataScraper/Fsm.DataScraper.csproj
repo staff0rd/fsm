@@ -85,6 +85,7 @@
     <Compile Include="Services\ScraperRules\Verse\ParagraphReplaceRule.cs" />
     <Compile Include="Services\ScraperRules\ReplaceTextRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\VerseNumbersColonSeparatedRule.cs" />
+    <Compile Include="Services\ScraperRules\Verse\VerseNumbersSupRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\VerseRemoveRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\VerseStartRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\VerseReplaceRule.cs" />
