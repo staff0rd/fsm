@@ -60,6 +60,7 @@ namespace Fsm.DataScraper.Services
 
             new BookNameReplaceRule("Numberof", "Number of") { BookNumber = 14 },
             new BookNameRemoveRule(":") { BookNumber = 14 },
+            new VerseTerminateRule(72) { BookNumber = 14, ChapterNumber = 1, VerseNumber = 16 },
 
             new ChapterHasStrongTitleRule(false) { BookNumber = 15 },
             new ParagraphStartRule(27) { BookNumber = 15, ChapterNumber = 1, VerseNumber = 0 },
