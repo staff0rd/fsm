@@ -65,6 +65,8 @@
     <Compile Include="Services\ScraperRules\Book\BookNameTerminateRule.cs" />
     <Compile Include="Services\ScraperRules\Book\BookNameRemoveRule.cs" />
     <Compile Include="Services\ScraperRules\Book\IBookRule.cs" />
+    <Compile Include="Services\ScraperRules\Book\ISplitParagraphsRule.cs" />
+    <Compile Include="Services\ScraperRules\Book\ParagraphSplitBook29Rule.cs" />
     <Compile Include="Services\ScraperRules\Chapter\ChapterHasEmTitleRule.cs" />
     <Compile Include="Services\ScraperRules\Chapter\ChapterHasStrongTitleRule.cs" />
     <Compile Include="Services\ScraperRules\Chapter\ChapterIsTildeTerminatedRule.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="Services\ScraperRules\StartRule.cs" />
     <Compile Include="Services\ScraperRules\IScraperRule.cs" />
     <Compile Include="Services\ScraperRules\ScraperRule.cs" />
+    <Compile Include="Services\ScraperRules\Verse\VerseNumbersPeriodSeparatedRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\IParagraphCleanupRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\IVerseCleanupRule.cs" />
     <Compile Include="Services\ScraperRules\Verse\IVerseMatchRule.cs" />

@@ -105,9 +105,19 @@ namespace Fsm.DataScraper.Services
 
             new ChapterHasStrongTitleRule { BookNumber = 26 },
 
-            new ChapterHasStrongTitleRule { BookNumber = 28 },
+            new ParagraphReplaceRule("<em>", "") { BookNumber = 27 },
+            new ParagraphReplaceRule("</em>", "") { BookNumber = 27 },
+
+            new ChapterLastVerseRule { BookNumber = 28, ChapterNumber = 1, VerseNumber = 4},
+            new ChapterLastVerseRule { BookNumber = 28, ChapterNumber = 2, VerseNumber = 19},
+            new VerseTerminateRule(33) { BookNumber = 28, ChapterNumber = 3, VerseNumber = 15 },
 
             new BookNameSetRule("Revelations of St. Jason") { BookNumber = 29 },
+            new VerseNumbersPeriodSeparatedRule { BookNumber = 29 },
+            new ChapterLastVerseRule { BookNumber = 29, ChapterNumber = 1, VerseNumber = 9 },
+            new ChapterLastVerseRule { BookNumber = 29, ChapterNumber = 2, VerseNumber = 5 },
+            new ChapterLastVerseRule { BookNumber = 29, ChapterNumber = 3, VerseNumber = 3 },
+            new ParagraphSplitBook29Rule { BookNumber = 29 },
 
             new ChapterHasStrongTitleRule { BookNumber = 30 },
             
@@ -164,7 +174,7 @@ namespace Fsm.DataScraper.Services
 
         private void ExtractText(Book book)
         {
-            var paragraphs = book.Dom["div.entry > p"].Select(p => WebUtility.HtmlDecode(p.InnerHTML).Replace("\n", "")).Where(p => !string.IsNullOrWhiteSpace(p));
+            var paragraphs = GetParagraphs(book);
 
             var chapter = DetermineFirstChapter(book);
 
@@ -186,6 +196,17 @@ namespace Fsm.DataScraper.Services
                 book.Chapters.Remove(book.Chapters.Last());
 
             ReviewChapters(book, paragraphs);
+        }
+
+        private IEnumerable<string> GetParagraphs(Book book)
+        {
+            var paragraphs = book.Dom["div.entry > p"].Select(p => WebUtility.HtmlDecode(p.InnerHTML).Replace("\n", "")).Where(p => !string.IsNullOrWhiteSpace(p));
+
+            var rule = _rules.OfType<ISplitParagraphsRule>().SingleOrDefault(p => p.Required(book.Number));
+            if (rule != null)
+                return rule.GetParagraphs(paragraphs);
+
+            return paragraphs;
         }
 
         private string PreProcessParagraph(Book book, Chapter chapter, string paragraph)
