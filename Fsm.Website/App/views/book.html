@@ -16,8 +16,8 @@
     <div class="book">
         <h4>Book <span data-bind="html: book().number"></span></h4>
         <h2 data-bind="html: book().name"></h2>
-        <div class="chapter" data-bind="foreach: book().chapters">
-            <h3>Chapter <span data-bind="html: number"></span></h3>
+        <div class="chapter" data-bind="foreach: { data: book().chapters, afterRender: scrollToSelected }">
+            <h3 data-bind="attr: {'id': number}">Chapter <span data-bind="html: number"></span></h3>
             <div>
                 <div class="verses" data-bind="foreach: verses">
                     <sub class="verse-number" data-bind="html: number"></sub><span class="verse" data-bind="html: text"></span>

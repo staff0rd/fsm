@@ -12,7 +12,7 @@
                 //{ route: 'flickr', moduleId: 'viewmodels/flickr', nav: true },
                 //{ route: 'bluedress', title: 'Blue Dress', moduleId: 'viewmodels/bluedress', nav: true },
                 { route: 'contents', title: 'Contents', moduleId: 'viewmodels/contents', nav: true },
-                { route: 'book/:abbr', moduleId: 'viewmodels/book' }
+                { route: 'book/:abbr(/:chapter)', moduleId: 'viewmodels/book' }
 
             ]).buildNavigationModel();
             
