@@ -1,5 +1,4 @@
 ﻿using CsQuery;
-using Fsm.Common.Services.ConsoleApp;
 using Fsm.DataScraper.Models;
 using Fsm.DataScraper.Services.ScraperRules;
 using System;
@@ -358,7 +357,7 @@ namespace Fsm.DataScraper.Services
 
         private void WhatNext(Chapter chapter)
         {
-            var key = Prompt.GetKey("Show (E)nd, show (A)ll, or press any key to continue:");
+            var key = Helpers.GetKey("Show (E)nd, show (A)ll, or press any key to continue:");
             switch (key)
             {
                 case ConsoleKey.E: ShowEndOfChapter(chapter); break;

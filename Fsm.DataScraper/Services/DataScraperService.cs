@@ -1,5 +1,4 @@
 ﻿using CsQuery;
-using Fsm.Common.Services.ConsoleApp;
 using Fsm.DataScraper.Models;
 using System;
 using System.Collections.Generic;
@@ -20,7 +19,7 @@ namespace Fsm.DataScraper.Services
 
         public List<Book> GetPages(string pageDirectory)
         {
-            int? bookNumber = Prompt.GetInt("Book number to parse:");
+            int? bookNumber = Helpers.GetInt("Book number to parse:");
 
             var pages = new List<Book>();
 

@@ -1,4 +1,5 @@
-﻿using Fsm.DataScraper.Models;
+﻿using Fsm.DataScraper;
+using Fsm.DataScraper.Models;
 using Fsm.DataScraper.Services;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Fsm.Website.Controllers
         {
             get
             {
-                _canon = XmlSerializerService.Deserialize<LooseCanon>(@"D:\git\fsm\canon.xml");
+                _canon = XmlSerializerService.Deserialize<LooseCanon>(Helpers.XmlPath);
                 _canon.Books = _canon.Books.Where(p => p != null && p.Number > 0).ToList();
 
                 return _canon;
