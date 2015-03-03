@@ -14,11 +14,11 @@ namespace Fsm.Website.Controllers
     {
         private static LooseCanon _canon;
 
-        public static LooseCanon Canon
+        public LooseCanon Canon
         {
             get
             {
-                _canon = XmlSerializerService.Deserialize<LooseCanon>(Helpers.XmlPath);
+                _canon = XmlSerializerService.Deserialize<LooseCanon>(HttpContext.Current.Server.MapPath("~/Content/canon.xml"));
                 _canon.Books = _canon.Books.Where(p => p != null && p.Number > 0).ToList();
 
                 return _canon;
