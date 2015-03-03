@@ -12,6 +12,6 @@ This was intended to be a [durandal](http://durandaljs.com/)-based web-reader fo
 However, then I ended up spending much more time writing (and then not finishing) the data scraper for the Church of the Flying Spaghetti Monster's [Loose Canon](http://www.loose-canon.info/) 
 that I never ended up implementing all the sweet durandal features I was hoping for.
 
-![Loose Canon](/screenshot.png?raw=true)
+![Loose Canon](/screenshot.PNG?raw=true)
 
 I can note that the web project using ASP.NET MVC couldn't be more overkill, and the DataScraper turned into something far less dynamic and structured than I had originally intended and is close to shameful.
